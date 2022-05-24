@@ -1,0 +1,17 @@
+.app-container {
+  margin: 0;
+  min-height: 0;
+}
+
+.cursor {
+  width: 5em;
+  height: 5em;
+  background-color: rgb(194, 50, 50);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 3;
+  pointer-events: none;
+  border-radius: 50%;
+  mix-blend-mode: difference;
+}

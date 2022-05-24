@@ -1,1 +1,236 @@
-/* You can add global styles to this file, and also import other style files */
+.main{
+  opacity: 3;
+  margin: 0 0 1em;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+ .seccion{
+  width: 100%;
+  min-height: 80vh;
+  padding: 2em;
+
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  color:rgb(230, 220, 209);
+  opacity: 3;
+  margin: 0 0 1em;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+.seccion .info{
+  font-size: 1.2em;
+  animation: aparecer1 2s ease 1 both ;
+  color:rgb(230, 220, 209);
+}
+ .seccion .ul{
+  margin: 2em 0 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  color:rgb(10, 6, 1);
+}
+ .seccion .ul .li{
+  list-style: none;
+  margin: 0 1em;
+  color:rgb(230, 220, 209);
+}
+.seccion .ul .a{
+  border:1px solid rgba(255,255,255,.2);
+  border-radius: 50%;
+  padding: 1em 1em 1em;
+  text-transform: uppercase;
+  font-weight: 600;
+  transition: all .5s ease;
+  animation: aparecer1 2s ease 1 backwards;
+  color:rgb(230, 220, 209);
+}
+.seccion .ul>:nth-child(2) .a{
+  animation-delay: .2s;
+}
+.seccion .ul .a:hover{
+  border-color: var(--blanco);
+}
+.seccion .h2{
+  font-family: var(--tipo-titular);
+  font-weight: 600;
+  font-size: 3.2em;
+  line-height:1em;
+  color:rgb(230, 220, 209);
+  mix-blend-mode: exclusion;
+
+}
+.seccion .h3{
+  font-family: var(--tipo-titular);
+  font-size: 1.3em;
+  color:rgb(230, 220, 209);
+}
+.seccion .grid{
+  width: 90%;
+  max-width: 40em;
+  margin: 1em 0;
+
+  display: grid;
+  grid-template-columns: repeat( auto-fit , minmax( 15rem , 1fr) );
+  gap:1em;
+}
+.seccion .article{
+  width: 100%;
+  min-height: 10vh;
+
+
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  position: relative;
+  overflow: hidden;
+  border-radius: 1em;
+}
+ .seccion .article .h4 {
+  width:20em;
+  height: 20em;
+  background-color: var(--negro-5);
+  backdrop-filter: blur(1rem);
+  position: absolute;
+  bottom:0;
+  left:0;
+  color:rgb(230, 220, 209);
+
+  display: flex;
+  flex-flow: row wrap ;
+  justify-content: center;
+  align-items: center;
+
+  font-size: 1em;
+  font-family: var(--tipo-titular);
+  font-style: italic;
+  opacity: 0;
+  transform:translateZ(1) scale(1.5);
+  transition: all .5s ease;
+}
+.main .seccion .article:hover .h4{
+  opacity: 1;
+  transform:translateZ(1) scale(1);
+}
+.seccion .p {
+  color:rgb(230, 220, 209);
+}
+.seccion .p-url{
+  margin: 2em 0 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.seccion .img{
+  width: 20em;
+  height: 20em;
+}
+.works{
+color:var(--negro);
+}
+.works .h2{
+color: rgb(230, 220, 209);
+margin: 0 0 1rem;
+color:inherit;
+}
+
+.about .h2{
+  color: rgb(230, 220, 209);
+  margin: 0 0 2rem;
+}
+.about .p{
+  max-width: 40rem;
+  color: rgb(230, 220, 209);
+  margin: 0 0 2rem;
+  font-size: 1.1em;
+  text-align: left;
+}
+.about .rrss{
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+.about .li{
+  /*background: orange;*/
+  margin: 0 1em;
+  color: rgb(10, 6, 1);
+}
+.about .svg{
+  width: 3em;
+  height: 3em;
+
+}
+.form-container-proyectos {
+  overflow: scroll;
+  width: 800px;
+  height: 150px;
+  align-items: center;
+  align-content: center;
+  border: 0px solid rgb(230, 220, 209);
+  padding: 50px 60px;
+  margin-top: 20vh;
+  -webkit-box-shadow: 10px 10px 37px 28px rgb(232, 229, 220);
+  -moz-box-shadow: 10px 10px 37px 28px rgb(242, 238, 225);
+  box-shadow: 10px 10px 37px 28px rgb(236, 231, 218);
+  box-sizing: content-box;
+}
+.btn-primary-outline {
+  background-color: transparent;
+  border-color:rgb(230, 220, 209);
+  border-radius: 50%;
+  box-shadow:rgb(230, 220, 209);
+  width:80px;
+  height: 50px;
+}
+.icono-editar{
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  width: 30px;
+  height: 30px;
+  margin-left: 80%;
+}
+.icono-editar .bi-pencil {
+  color: bisque;
+  font-size: 21px;
+}
+.icono-borrar{
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  padding: 1.5rem;
+  width: 80px;
+  height: 40px;
+  margin-left: 80%;
+}
+.icono-borrar .bi-x-circle{
+  color: bisque;
+  font-size: 21px;
+}
+.form-container-sobre-mi{
+  overflow: scroll;
+  width: 80%;
+  height: 350px;
+  align-items: center;
+  align-content: center;
+  border: 0px solid #fff;
+  padding: 50px 60px;
+  margin-top: 20vh;
+  -webkit-box-shadow: 10px 10px 37px 28px rgb(232, 229, 220);
+  -moz-box-shadow: 10px 10px 37px 28px rgb(242, 238, 225);
+  box-shadow: 10px 10px 37px 28px rgb(236, 231, 218);
+  box-sizing: content-box;
+}
+

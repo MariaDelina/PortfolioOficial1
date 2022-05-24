@@ -1,0 +1,43 @@
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-4 mx-auto">
+          <form [formGroup]="formularioEducacion" (ngSubmit)="editarEducacion()">
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input  formControlName="certificaciones"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="edita tu certificacion" >
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input  formControlName="info_de_instituto"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="edita la informacion de tu instituto" >
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input  formControlName="url_logo_instituto"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="edita la url del logo de tu instituto" >
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input  formControlName="nombre_carrera"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="edita el nombre de tu carrera" >
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input  formControlName="desde_periodo_año"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="edita el comienzo de tu educacion" >
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input  formControlName="hasta_periodo_año"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="edita la finalización de tu educacion" >
+            </div>
+            <div class="btn-group" role="group" aria-label="">
+            <button type="submit" class="btn btn-succes">Editar</button>
+            <button class="btn btn-primary">Cancelar</button>
+
+          </div>
+          </form>
+      </div>
+  </div>
+</div>

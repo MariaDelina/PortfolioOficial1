@@ -1,0 +1,24 @@
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-4 mx-auto">
+          <form [formGroup]="formularioPresentacion" (ngSubmit)="enviarPresentacion()">
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <h6>Editar nombre y apellido</h6>
+              <input  formControlName="nombre_y_apellido"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="agrege su nombre y apellido" >
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <h6>Editar puesto en el que se desempeña</h6>
+              <input  formControlName="puesto"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="agrege el puesto en el que se desempeña" >
+            </div>
+            <div class="btn-group" role="group" aria-label="">
+            <button type="submit" class="btn btn-succes">Editar</button>
+            <button class="btn btn-primary">Cancelar</button>
+          </div>
+          </form>
+      </div>
+  </div>
+</div>

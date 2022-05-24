@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-4 mx-auto">
+          <form [formGroup]="formularioProyectos" (ngSubmit)="enviarProyectos()">
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input type="text"
+              class="form-control" formControlName="nombre_de_proyecto"  aria.describedby="helpId" placeholder="escribe el nombre de tu proyecto">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input type="text"
+              class="form-control" formControlName="descripcion_del_proyecto"  aria.describedby="helpId" placeholder="escribe una descripcion de tu proyecto">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input type="text"
+              class="form-control" formControlName="link_de_evidencia"  aria.describedby="helpId" placeholder="escribe la Url de tu proyecto">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input type="date"
+              class="form-control" formControlName="fecha_de_realizacion"  aria.describedby="helpId" placeholder="escribe la fecha de realizacion de tu proyecto">
+            </div>
+            <div class="btn-group" role="group" aria-label="">
+            <button type="submit" class="btn btn-succes">Agregar</button>
+            <button class="btn btn-primary">Cancelar</button>
+          </div>
+          </form>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-4 mx-auto">
+          <form [formGroup]="formularioExperiencia" (ngSubmit)="enviarExperiencia()">
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input type="text"
+              class="form-control" formControlName="lugar_de_trabajo"  aria.describedby="helpId" placeholder="escriba el lugar de trabajo">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input type="text"
+              class="form-control" formControlName="titulo_del_puesto"  aria.describedby="helpId" placeholder="escribe el titulo del puesto ocupado">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input type="file"
+              class="form-control" formControlName="url_logo_empresa"  aria.describedby="helpId" placeholder="escribe la Url del logo de su empresa">
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input type="date"
+              class="form-control" formControlName="descripcion_de_actividades"  aria.describedby="helpId" placeholder="escribe la descripcion de las actividades desarrolladas">
+            </div>
+            <div class="btn-group" role="group" aria-label="">
+            <button type="submit" class="btn btn-succes">Agregar</button>
+            <button class="btn btn-primary">Cancelar</button>
+          </div>
+          </form>
+      </div>
+  </div>
+</div>

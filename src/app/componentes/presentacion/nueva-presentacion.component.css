@@ -1,0 +1,11 @@
+
+.btn-primary-outline {
+  background-color: transparent;
+  border-color:rgb(230, 220, 209);
+  border-radius: 50%;
+  box-shadow:rgb(230, 220, 209);
+  width: 80px;
+  height: 40px;
+}
+
+

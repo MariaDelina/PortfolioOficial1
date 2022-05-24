@@ -1,0 +1,33 @@
+<div class="container">
+  <div class="row mt-5">
+      <div class="col-md-4 mx-auto">
+          <form [formGroup]="formularioExperiencia" (ngSubmit)="enviarExperiencia()">
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input  formControlName="nombre_de_proyecto"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="edita tu descripcion" >
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input  formControlName="descripcion_del_proyecto"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="edita tu descripcion" >
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input  formControlName="link_de_evidencia"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="edita tu descripcion" >
+            </div>
+            <div class="mb-3">
+              <label for="" class="form-label"></label>
+              <input  formControlName="fecha_de_realizacion"  type="text"
+              class="form-control" aria.describedby="helpId" placeholder="edita tu descripcion" >
+            </div>
+            <div class="btn-group" role="group" aria-label="">
+            <button type="submit" class="btn btn-succes">Editar</button>
+            <button class="btn btn-primary">Cancelar</button>
+
+          </div>
+          </form>
+      </div>
+  </div>
+</div>

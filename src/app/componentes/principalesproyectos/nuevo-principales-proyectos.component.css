@@ -1,0 +1,17 @@
+.container{
+  width: 800px;
+  height: 150px;
+  align-items: center;
+  align-content: center;
+  border: 0px solid rgb(230, 220, 209);
+  padding: 50px 60px;
+  margin-top: 20vh;
+  -webkit-box-shadow: 10px 10px 37px 28px rgb(232, 229, 220);
+  -moz-box-shadow: 10px 10px 37px 28px rgb(242, 238, 225);
+  box-shadow: 10px 10px 37px 28px rgb(236, 231, 218);
+  box-sizing: content-box;
+}
+.agregar
+{
+  background-color: aquamarine;
+}

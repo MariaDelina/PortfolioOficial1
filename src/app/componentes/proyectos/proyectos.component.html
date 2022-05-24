@@ -1,0 +1,24 @@
+<div class="main">
+  <section class="seccion" id="works">
+ <section class="seccion about" id="about">
+  <h2 class="h2">Descripcion de los Proyectos y otros</h2>
+  <button class="btn btn-primary-outline" routerLink="/nuevos-proyectos">Agregar</button>
+    <form *ngFor="let proyecto of proyectos">
+      <form class="form-container-proyectos">
+    <div>{{proyecto.nombre_de_proyecto}}</div>
+    <hr>
+    <div>{{proyecto.descripcion_del_proyecto}}</div>
+    <hr>
+    <div>{{proyecto.link_de_evidencia}}</div>
+    <hr>
+    <div>{{proyecto.fecha_de_realizacion}}</div>
+    <hr>
+
+</form>
+<button class="icono-editar" routerLink="/editar-proyectos/{{proyecto.id}}"><i class="bi bi-pencil"></i></button>
+<button class="icono-borrar" type="button"  href="#" (click)="borrar(proyecto.id, proyecto)"><i class="bi bi-x-circle"></i></button>
+
+  </form>
+</section>
+</section>
+</div>
