@@ -1,26 +1,40 @@
 <div class="main">
   <section class="seccion" id="works">
- <section class="seccion about" id="about">
-  <h2 class="h2">Educacion</h2>
-  <button class="btn btn-primary-outline" routerLink="/nueva-educacion">Agregar</button>
-    <form *ngFor="let educacion of educaciones">
-      <form class="form-container-proyectos">
-    <div>{{educacion.certificaciones}}</div>
-    <hr>
-    <div>{{educacion.info_de_instituto}}</div>
-    <hr>
-    <div>{{educacion.url_logo_instituto}}</div>
-    <hr>
-    <div>{{educacion.nombre_carrera}}</div>
-    <hr>
-    <div>{{educacion.desde_periodo_ano}}</div>
-    <hr>
-    <div>{{educacion.hasta_periodo_ano}}</div>
-    <hr>
-</form>
-<button class="icono-editar" routerLink="/editar-educacion/{{educacion.id}}"><i class="bi bi-pencil"></i>Editar</button>
-<button class="icono-borrar" type="button"  href="#" (click)="borrar(educacion.id, educacion)"><i class="bi bi-x-circle"></i></button>
-</form>
-</section>
-</section>
+    <section class="seccion about" id="about">
+      <h2 class="h2">Educacion</h2>
+      <button class="btn btn-primary-outline" routerLink="/nueva-educacion">
+        Agregar
+      </button>
+      <form *ngFor="let educacion of educaciones">
+        <form class="form-container-proyectos">
+          <div>{{ educacion.certificaciones }}</div>
+          <hr />
+          <div>{{ educacion.info_de_instituto }}</div>
+          <hr />
+          <div>{{ educacion.url_logo_instituto }}</div>
+          <hr />
+          <div>{{ educacion.nombre_carrera }}</div>
+          <hr />
+          <div>{{ educacion.desde_periodo_ano }}</div>
+          <hr />
+          <div>{{ educacion.hasta_periodo_ano }}</div>
+          <hr />
+        </form>
+        <button
+          class="icono-editar"
+          routerLink="/editar-educacion/{{ educacion.id }}"
+        >
+          <i class="bi bi-pencil"></i>Editar
+        </button>
+        <button
+          class="icono-borrar"
+          type="button"
+          href="#"
+          (click)="borrar(educacion.id, educacion)"
+        >
+          <i class="bi bi-x-circle"></i>
+        </button>
+      </form>
+    </section>
+  </section>
 </div>

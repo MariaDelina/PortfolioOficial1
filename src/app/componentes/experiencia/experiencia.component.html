@@ -1,24 +1,38 @@
 <div class="main">
   <section class="seccion" id="works">
- <section class="seccion about" id="about">
-  <h2 class="h2">Experiencia Laboral</h2>
-  <button class="btn btn-primary-outline" routerLink="/nueva-experiencia">Agregar</button>
-    <form *ngFor="let experiencia of experiencias">
-      <form class="form-container-proyectos">
-    <div>{{experiencia.lugar_de_trabajo}}</div>
-    <hr>
-    <div>{{experiencia.titulo_del_puesto}}</div>
-    <hr>
-    <div>{{experiencia.url_logo_empresa}}</div>
-    <hr>
-    <div>{{experiencia.descripcion_de_actividades}}</div>
-    <hr>
-
-</form>
-<button class="icono-editar" routerLink="/editar-experiencia/{{experiencia.id}}"><i class="bi bi-pencil"></i>Editar</button>
-<button class="icono-borrar" type="button"  href="#" (click)="borrar(experiencia.id, experiencia)"><i class="bi bi-x-circle"></i></button>
-  </form>
-</section>
-</section>
+    <section class="seccion about" id="about">
+      <h2 class="h2">Experiencia Laboral</h2>
+      <button class="btn btn-primary-outline" routerLink="/nueva-experiencia">
+        Agregar
+      </button>
+      <form *ngFor="let experiencia of experiencias">
+        <form class="form-container-proyectos">
+          <div>{{ experiencia.lugar_de_trabajo }}</div>
+          <hr />
+          <div>{{ experiencia.titulo_del_puesto }}</div>
+          <hr />
+          <div>{{ experiencia.url_logo_empresa }}</div>
+          <hr />
+          <div>{{ experiencia.descripcion_de_actividades }}</div>
+          <hr />
+          <div>{{ experiencia.fecha_de_actividad }}</div>
+          <hr />
+        </form>
+        <button
+          class="icono-editar"
+          routerLink="/editar-experiencia/{{ experiencia.id }}"
+        >
+          <i class="bi bi-pencil"></i>Editar
+        </button>
+        <button
+          class="icono-borrar"
+          type="button"
+          href="#"
+          (click)="borrar(experiencia.id, experiencia)"
+        >
+          <i class="bi bi-x-circle"></i>
+        </button>
+      </form>
+    </section>
+  </section>
 </div>
-

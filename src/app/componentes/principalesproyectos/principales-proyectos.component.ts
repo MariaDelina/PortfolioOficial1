@@ -7,33 +7,38 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-principales-proyectos',
   templateUrl: './principales-proyectos.component.html',
-  styleUrls: ['./principales-proyectos.component.css']
+  styleUrls: ['./principales-proyectos.component.css'],
 })
 export class PrincipalesProyectosComponent implements OnInit {
-
-  prinProyectos: PrincipalesProyectos[] =[];
-
+  prinProyectos: PrincipalesProyectos[] = [];
 
   constructor(
-    private principalesproyectosService : PrincipalesproyectosService ,
+    private principalesproyectosService: PrincipalesproyectosService,
     private toastr: ToastrService,
     private activatedRoute: ActivatedRoute
-    ) {
-
-    }
+  ) {}
 
   ngOnInit() {
-    this.principalesproyectosService.lista().subscribe(respuesta => {
-      console.log(respuesta);
-      this.prinProyectos=respuesta;
-    })
+    this.principalesproyectosService.lista().subscribe({
+      next: (data) => {
+        console.log(data);
+        this.prinProyectos = data;
+      },
+      error: (err) => {
+        console.log(err);
+      },
+    });
   }
-borrar(id:any, proyectos:any){
-  if(window.confirm("¿Desea borrar el registro?")){
-  this.principalesproyectosService.delete(id).subscribe((respuesta) => {
-    this.prinProyectos.splice(1, proyectos)
-  })
-}
-}
-
+  borrar(id: any, proyectos: any) {
+    if (window.confirm('¿Desea borrar el registro?')) {
+      this.principalesproyectosService.delete(id).subscribe({
+        next: (data) => {
+          this.prinProyectos.splice(1, proyectos);
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+    }
+  }
 }

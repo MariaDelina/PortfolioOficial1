@@ -7,33 +7,33 @@ import { ActivatedRoute } from '@angular/router';
 @Component({
   selector: 'app-proyectos',
   templateUrl: './proyectos.component.html',
-  styleUrls: ['./proyectos.component.css']
+  styleUrls: ['./proyectos.component.css'],
 })
 export class ProyectosComponent implements OnInit {
-
-  proyectos: Proyectos[] =[];
-
+  proyectos: Proyectos[] = [];
 
   constructor(
     private proyectosService: ProyectosService,
     private toastr: ToastrService,
     private activatedRoute: ActivatedRoute
-    ) {
-
-    }
+  ) {}
 
   ngOnInit() {
-    this.proyectosService.lista().subscribe(respuesta => {
-      console.log(respuesta);
-      this.proyectos=respuesta;
-    })
+    this.proyectosService.lista().subscribe({
+      next: (data) => {
+        console.log(data);
+        this.proyectos = data;
+      },
+      error: (err: Error) => {
+        console.log(err);
+      },
+    });
   }
-borrar(id:any, proyectos:any){
-  if(window.confirm("¿Desea borrar el registro?")){
-  this.proyectosService.delete(id).subscribe((respuesta) => {
-    this.proyectos.splice(1, proyectos)
-  })
-}
-}
-
+  borrar(id: any, proyectos: any) {
+    if (window.confirm('¿Desea borrar el registro?')) {
+      this.proyectosService.delete(id).subscribe((respuesta) => {
+        this.proyectos.splice(1, proyectos);
+      });
+    }
+  }
 }

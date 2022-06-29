@@ -1,18 +1,17 @@
-import { Component, OnInit  } from "@angular/core";
-import { BannerService } from "src/app/servicios/banner.service";
+import { Component, OnInit } from '@angular/core';
+import { BannerService } from 'src/app/servicios/banner.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'editar-banner',
   templateUrl: './editar-banner.component.html',
-  styleUrls: ['./editar-banner.component.css']
+  styleUrls: ['./editar-banner.component.css'],
 })
 export class EditarBannerComponent {
-  formularioBanner:FormGroup;
-  formId:any;
-
+  formularioBanner: FormGroup;
+  formId: any;
 
   constructor(
     private bannerService: BannerService,
@@ -21,33 +20,36 @@ export class EditarBannerComponent {
     private router: Router,
     private formulario: FormBuilder
   ) {
-      this.formId = this.activatedRoute.snapshot.paramMap.get('id');
-      console.log(this.formId)
-      this.bannerService.detail(this.formId).subscribe(
-      respuesta=>{
+    this.formId = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log(this.formId);
+    this.bannerService.detail(this.formId).subscribe((respuesta) => {
       console.log(respuesta);
       this.formularioBanner.setValue({
-        primera_descripcion:respuesta['primera_descripcion'],
-        segunda_descripcion:respuesta['segunda_descripcion'],
-        tercera_descripcion:respuesta['tercera_descripcion'],
-      })
-      }
-      );
-      this.formularioBanner=this.formulario.group(
-        {
-          primera_descripcion:[''],
-          segunda_descripcion:[''],
-          tercera_descripcion:[''],
-        }
-      );
-
-   }
-
-   enviarBanner():any{
-     this.bannerService.update(this.formId, this.formularioBanner.value).subscribe(()=>{
-      this.router.navigateByUrl('');
-     })
-
-    }
-
+        primera_descripcion: respuesta['primera_descripcion'],
+        segunda_descripcion: respuesta['segunda_descripcion'],
+        tercera_descripcion: respuesta['tercera_descripcion'],
+      });
+    });
+    this.formularioBanner = this.formulario.group({
+      primera_descripcion: ['', [Validators.required]],
+      segunda_descripcion: ['', [Validators.required]],
+      tercera_descripcion: ['', [Validators.required]],
+    });
+  }
+  get PrimeraDescripcion() {
+    return this.formularioBanner.get('primera_descripcion');
+  }
+  get SegundaDescripcion() {
+    return this.formularioBanner.get('segunda_descripcion');
+  }
+  get TerceraDescripcion() {
+    return this.formularioBanner.get('tercera_descripcion');
+  }
+  enviarBanner(): any {
+    this.bannerService
+      .update(this.formId, this.formularioBanner.value)
+      .subscribe(() => {
+        this.router.navigateByUrl('');
+      });
+  }
 }

@@ -1,24 +1,63 @@
 <div class="agregar">
-<div class="container">
-  <div class="row mt-5">
+  <div class="container">
+    <div class="row mt-5">
       <div class="col-md-4 mx-auto">
-          <form [formGroup]="formularioprincipalesProyectos" (ngSubmit)="enviarPrincipalesProyectos()">
-<div class="mb-3">
-  <label for="" class="form-label"></label>
-  <input type="text"
-  class="form-control" formControlName="url_primer_proyecto_principal"  aria.describedby="helpId" placeholder="agrege la url del primer proyecto principal">
-</div>
-<div class="mb-3">
-  <label for="" class="form-label"></label>
-  <input type="text"
-  class="form-control" formControlName="url_segundo_proyecto_principal"  aria.describedby="helpId" placeholder="agrege la url del segundo proyecto principal">
-</div>
-<div class="btn-group" role="group" aria-label="">
-  <button type="submit" class="btn btn-succes">Agregar</button>
-  <button class="btn btn-primary">Cancelar</button>
-</div>
-</form>
-</div>
-</div>
-</div>
+        <form
+          [formGroup]="formularioPrincipalesProyectos"
+          (ngSubmit)="enviarPrincipalesProyectos()"
+        >
+          <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="url_primer_proyecto_principal"
+              aria.describedby="helpId"
+              placeholder="agrege la url del primer proyecto principal"
+            />
+          </div>
+          <div
+            *ngIf="
+              UrlPrimerProyectoPrincipal?.errors &&
+              UrlPrimerProyectoPrincipal?.touched
+            "
+          >
+            <p
+              *ngIf="UrlPrimerProyectoPrincipal?.hasError('required')"
+              class="text-danger"
+            >
+              El campo es requerido
+            </p>
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="url_segundo_proyecto_principal"
+              aria.describedby="helpId"
+              placeholder="agrege la url del segundo proyecto principal"
+            />
+          </div>
+          <div
+            *ngIf="
+              UrlSegundoProyectoPrincipal?.errors &&
+              UrlSegundoProyectoPrincipal?.touched
+            "
+          >
+            <p
+              *ngIf="UrlSegundoProyectoPrincipal?.hasError('required')"
+              class="text-danger"
+            >
+              El campo es requerido
+            </p>
+          </div>
+          <div class="btn-group" role="group" aria-label="">
+            <button type="submit" class="btn btn-succes">Agregar</button>
+            <button class="btn btn-primary">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>

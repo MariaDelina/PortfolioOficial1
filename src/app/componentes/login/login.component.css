@@ -1,4 +1,4 @@
-.container-login{
+.container-login {
   opacity: 3;
   margin: 0 0 1em;
   text-align: center;
@@ -14,7 +14,7 @@
   align-content: center;
   border: 0px solid rgb(230, 220, 209);
   padding: 50px 60px;
-  -webkit-box-shadow: 10px 10px 37px 28px rgb(232, 229, 220);
+  -webkit-box-shadow: 10px 10px 27px 20px rgb(232, 229, 220);
   -moz-box-shadow: 10px 10px 37px 28px rgb(242, 238, 225);
   box-shadow: 10px 10px 37px 28px rgb(236, 231, 218);
   box-sizing: content-box;
@@ -23,74 +23,89 @@
   position: relative;
   z-index: 2;
   margin-top: 130px;
-  margin-left: 200px;
+  margin-left: 350px;
+  margin-bottom: 40px;
 }
 .login {
   margin-right: 300px;
+  padding: 10px;
 }
-
-#input-login {
-  width: 40%;
-  margin-right: 100px;
-}
-.grid-login {
+.input-login {
   width: 400px;
+  padding: 15px;
   height: 25px;
 }
-.circulos{
+.form-input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 40px;
+  margin-right: 10px;
+}
+#input-login {
+  width: 60%;
+  margin-right: 200px;
+}
+.circulos {
   background-color: rgb(50, 47, 47);
   position: fixed;
-  width:100%;
+  width: 100%;
   height: 150%;
-  top:0;
-  left:0;
+  top: 0;
+  left: 0;
   z-index: 1;
   filter: blur(1em);
-  animation:circulo1 20s linear infinite both;
-
+  animation: circulo1 20s linear infinite both;
 }
- .circulos .circulo{
- position: absolute;
- width: 50%;
- height: 50%;
- animation:circulo1 20s linear infinite both;
+.circulos .circulo {
+  position: absolute;
+  width: 50%;
+  height: 50%;
+  animation: circulo1 20s linear infinite both;
 }
- .circulos .circulo1{
-  top:0%;
-  left:0%;
-  animation:circulo1 70s linear infinite both;
+.circulos .circulo1 {
+  top: 0%;
+  left: 0%;
+  animation: circulo1 70s linear infinite both;
 }
-.circulos .circulo1 .path{
+.circulos .circulo1 .path {
   fill: #2b5fac;
 }
- .circulos .circulo2{
-  top:0%;
-  right:0%;
+.circulos .circulo2 {
+  top: 0%;
+  right: 0%;
 }
- .circulos .circulo2 .path{
+.circulos .circulo2 .path {
   fill: rgb(111, 0, 155);
 }
-.circulos .circulo3{
-  bottom:0%;
-  left:0%;
+.circulos .circulo3 {
+  bottom: 0%;
+  left: 0%;
 }
-.circulos .circulo3 .path{
+.circulos .circulo3 .path {
   fill: rgb(133, 2, 30);
 }
-.circulos .circulo4{
-  bottom:0%;
-  right:0%;
+.circulos .circulo4 {
+  bottom: 0%;
+  right: 0%;
 }
-.circulos .circulo4 .path{
+.circulos .circulo4 .path {
   fill: rgb(190, 178, 2);
 }
-@keyframes circulo1{
-  from{
-    transform:rotate(0deg) scale(3);
+@keyframes circulo1 {
+  from {
+    transform: rotate(0deg) scale(3);
+  }
+  to {
+    transform: rotate(360deg) scale(3);
+  }
 }
-  to{
-    transform:rotate(360deg) scale(3);
+.button-login {
+  background-color: transparent;
+  border-color: rgb(230, 220, 209);
+  box-shadow: rgb(230, 220, 209);
+  border-radius: 10%;
+  color: antiquewhite;
+  width: 80px;
+  height: 50px;
+  margin-top: 40px;
 }
-}
-
-

@@ -21,38 +21,43 @@ import { NuevaEducacionComponent } from './componentes/educacion/nueva-educacion
 import { NuevaPresentacionComponent } from './componentes/presentacion/nueva-presentacion.component';
 import { LoginComponent } from './componentes/login/login.component';
 
-
 const routes: Routes = [
-  {path: '',component:PortfolioComponent},
-  {path: 'presentacion', component:PresentacionComponent},
-  {path: 'proyectos',component:ProyectosComponent},
-  {path: 'banner', component:BannerComponent},
-  {path: 'nuevo-banner', component:NuevoBannerComponent},
-  {path: 'editar-banner/:id', component:EditarBannerComponent},
-  {path: 'login', component:LoginComponent},
+  { path: '', component: LoginComponent },
+  { path: 'presentacion', component: PresentacionComponent },
+  { path: 'proyectos', component: ProyectosComponent },
+  { path: 'banner', component: BannerComponent },
+  { path: 'nuevo-banner', component: NuevoBannerComponent },
+  { path: 'editar-banner/:id', component: EditarBannerComponent },
+  { path: 'login', component: LoginComponent },
 
-  {path: 'principales-proyectos', component:PrincipalesProyectosComponent},
-  {path: 'nuevos-principales-proyectos', component:NuevosPrincipalesProyectosComponent},
-  {path: 'editar-principales-proyectos/:id', component:EditarPrincipalesProyectosComponent},
+  { path: 'principales-proyectos', component: PrincipalesProyectosComponent },
+  {
+    path: 'nuevos-principales-proyectos',
+    component: NuevosPrincipalesProyectosComponent,
+  },
+  {
+    path: 'editar-principales-proyectos/:id',
+    component: EditarPrincipalesProyectosComponent,
+  },
 
-  {path: 'nuevos-proyectos',component:NuevosProyectosComponent},
-  {path: 'editar-proyectos/:id',component:EditarProyectosComponent},
+  { path: 'nuevos-proyectos', component: NuevosProyectosComponent },
+  { path: 'editar-proyectos/:id', component: EditarProyectosComponent },
 
-  {path: 'editar-presentacion/:id', component:EditarPresentacionComponent},
-  {path: 'nueva-presentacion', component:NuevaPresentacionComponent},
+  { path: 'editar-presentacion/:id', component: EditarPresentacionComponent },
+  { path: 'nueva-presentacion', component: NuevaPresentacionComponent },
 
-  {path: 'experiencia', component:ExperienciaComponent},
-  {path: 'editar-experiencia/:id', component:EditarExperienciaComponent},
-  {path: 'nueva-experiencia', component:NuevaExperienciaComponent},
+  { path: 'experiencia', component: ExperienciaComponent },
+  { path: 'editar-experiencia/:id', component: EditarExperienciaComponent },
+  { path: 'nueva-experiencia', component: NuevaExperienciaComponent },
 
-  {path: 'educacion', component:EducacionComponent},
-  {path: 'editar-educacion/:id', component:EditarEducacionComponent},
-  {path: 'nueva-educacion', component:NuevaEducacionComponent},
-  {path: '**', redirectTo: '', pathMatch: 'full'},
+  { path: 'educacion', component: EducacionComponent },
+  { path: 'editar-educacion/:id', component: EditarEducacionComponent },
+  { path: 'nueva-educacion', component: NuevaEducacionComponent },
+  { path: '**', redirectTo: '', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

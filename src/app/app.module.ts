@@ -54,7 +54,7 @@ import { LoginComponent } from './componentes/login/login.component';
     BannerComponent,
     NuevoBannerComponent,
     EditarBannerComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,9 +63,9 @@ import { LoginComponent } from './componentes/login/login.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

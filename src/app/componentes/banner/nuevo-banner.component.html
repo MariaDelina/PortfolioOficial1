@@ -1,27 +1,66 @@
 <div class="container">
   <div class="row mt-5">
-      <div class="col-md-4 mx-auto">
-          <form [formGroup]="formularioBanner" (ngSubmit)="enviarBanner()">
-<div class="mb-3">
-  <label for="" class="form-label"></label>
-  <input type="text"
-  class="form-control" formControlName="primera_descripcion"  aria.describedby="helpId" placeholder="agrege una descripcion de sus potencialidades">
-</div>
-<div class="mb-3">
-  <label for="" class="form-label"></label>
-  <input type="text"
-  class="form-control" formControlName="segunda_descripcion"  aria.describedby="helpId" placeholder="agrege una descripcion de sus potencialidades">
-</div>
-<div class="mb-3">
-  <label for="" class="form-label"></label>
-  <input type="text"
-  class="form-control" formControlName="tercera_descripcion"  aria.describedby="helpId" placeholder="agrege una descripcion de sus potencialidades">
-</div>
-<div class="btn-group" role="group" aria-label="">
-  <button type="submit" class="btn btn-succes">Agregar</button>
-  <button class="btn btn-primary">Cancelar</button>
-</div>
-</form>
-</div>
-</div>
+    <div class="col-md-4 mx-auto">
+      <form [formGroup]="formularioBanner" (ngSubmit)="enviarBanner()">
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="primera_descripcion"
+            aria.describedby="helpId"
+            placeholder="agrege una descripcion de sus potencialidades"
+          />
+        </div>
+        <div *ngIf="PrimeraDescripcion?.errors && PrimeraDescripcion?.touched">
+          <p
+            *ngIf="PrimeraDescripcion?.hasError('required')"
+            class="text-danger"
+          >
+            El campo es requerido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="segunda_descripcion"
+            aria.describedby="helpId"
+            placeholder="agrege una descripcion de sus potencialidades"
+          />
+        </div>
+        <div *ngIf="SegundaDescripcion?.errors && SegundaDescripcion?.touched">
+          <p
+            *ngIf="SegundaDescripcion?.hasError('required')"
+            class="text-danger"
+          >
+            El campo es requerido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="tercera_descripcion"
+            aria.describedby="helpId"
+            placeholder="agrege una descripcion de sus potencialidades"
+          />
+        </div>
+        <div *ngIf="TerceraDescripcion?.errors && TerceraDescripcion?.touched">
+          <p
+            *ngIf="TerceraDescripcion?.hasError('required')"
+            class="text-danger"
+          >
+            El campo es requerido
+          </p>
+        </div>
+        <div class="btn-group" role="group" aria-label="">
+          <button type="submit" class="btn btn-succes">Agregar</button>
+          <button class="btn btn-primary">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

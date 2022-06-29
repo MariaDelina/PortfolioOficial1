@@ -1,42 +1,102 @@
 <div class="container">
   <div class="row mt-5">
-      <div class="col-md-4 mx-auto">
-          <form [formGroup]="formularioEducacion" (ngSubmit)="enviarEducacion()">
-            <div class="mb-3">
-              <label for="" class="form-label"></label>
-              <input type="text"
-              class="form-control" formControlName="certificaciones"  aria.describedby="helpId" placeholder="coloca la certificacion de tu educacion">
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label"></label>
-              <input type="text"
-              class="form-control" formControlName="info_de_instituto"  aria.describedby="helpId" placeholder="escribe la infomacion de tu instituto">
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label"></label>
-              <input type="text"
-              class="form-control" formControlName="url_logo_instituto"  aria.describedby="helpId" placeholder="escribe la Url del logo del instituto">
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label"></label>
-              <input type="text"
-              class="form-control" formControlName="nombre_carrera"  aria.describedby="helpId" placeholder="escribe el nombre de tu carrera">
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label"></label>
-              <input type="date"
-              class="form-control" formControlName="desde_periodo_año"  aria.describedby="helpId" placeholder="escribe la fecha de inicio de tus estudios">
-            </div>
-            <div class="mb-3">
-              <label for="" class="form-label"></label>
-              <input type="date"
-              class="form-control" formControlName="hasta_periodo_año"  aria.describedby="helpId" placeholder="escribe la fecha de finalización de tus estudios">
-            </div>
-            <div class="btn-group" role="group" aria-label="">
-            <button type="submit" class="btn btn-succes">Agregar</button>
-            <button class="btn btn-primary">Cancelar</button>
-          </div>
-          </form>
-      </div>
+    <div class="col-md-4 mx-auto">
+      <form [formGroup]="formularioEducacion" (ngSubmit)="enviarEducacion()">
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="certificaciones"
+            aria.describedby="helpId"
+            placeholder="coloca la certificacion de tu educacion"
+          />
+        </div>
+        <div *ngIf="Certificaciones?.errors && Certificaciones?.touched">
+          <p *ngIf="Certificaciones?.hasError('required')" class="text-danger">
+            El campo es requerido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="info_de_instituto"
+            aria.describedby="helpId"
+            placeholder="escribe la infomacion de tu instituto"
+          />
+        </div>
+        <div *ngIf="InfoDeInstituto?.errors && InfoDeInstituto?.touched">
+          <p *ngIf="InfoDeInstituto?.hasError('required')" class="text-danger">
+            El campo es requerido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="url_logo_instituto"
+            aria.describedby="helpId"
+            placeholder="escribe la Url del logo del instituto"
+          />
+        </div>
+        <div *ngIf="UrlLogoInstituto?.errors && UrlLogoInstituto?.touched">
+          <p *ngIf="UrlLogoInstituto?.hasError('required')" class="text-danger">
+            El campo es requerido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="nombre_carrera"
+            aria.describedby="helpId"
+            placeholder="escribe el nombre de tu carrera"
+          />
+        </div>
+        <div *ngIf="NombreCarrera?.errors && NombreCarrera?.touched">
+          <p *ngIf="NombreCarrera?.hasError('required')" class="text-danger">
+            El campo es requerido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="desde_periodo_ano"
+            aria.describedby="helpId"
+            placeholder="escribe la fecha de inicio de tus estudios"
+          />
+        </div>
+        <div *ngIf="DesdePeriodoAno?.errors && DesdePeriodoAno?.touched">
+          <p *ngIf="DesdePeriodoAno?.hasError('required')" class="text-danger">
+            El campo es requerido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input
+            type="date"
+            class="form-control"
+            formControlName="hasta_periodo_ano"
+            aria.describedby="helpId"
+            placeholder="escribe la fecha de finalización de tus estudios"
+          />
+        </div>
+        <div *ngIf="HastaPeriodoAno?.errors && HastaPeriodoAno?.touched">
+          <p *ngIf="HastaPeriodoAno?.hasError('required')" class="text-danger">
+            El campo es requerido
+          </p>
+        </div>
+        <div class="btn-group" role="group" aria-label="">
+          <button type="submit" class="btn btn-succes">Agregar</button>
+          <button class="btn btn-primary">Cancelar</button>
+        </div>
+      </form>
+    </div>
   </div>
 </div>

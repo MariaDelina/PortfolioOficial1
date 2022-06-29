@@ -1,38 +1,47 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
-
 
 @Component({
   selector: 'nueva-experiencia',
   templateUrl: './nueva-experiencia.component.html',
-  styleUrls: ['./nueva-experiencia.component.css']
+  styleUrls: ['./nueva-experiencia.component.css'],
 })
-
-
 export class NuevaExperienciaComponent {
+  formularioExperiencia: FormGroup;
 
-  formularioExperiencia:FormGroup;
-
-constructor(
-  public formularioExp: FormBuilder,
-  private experienciaService:ExperienciaService,
-  private ruta:Router
-  ){
-  this.formularioExperiencia = this.formularioExp.group({
-    lugar_de_trabajo:[''],
-    titulo_del_puesto:[''],
-    url_logo_empresa:[''],
-    descripcion_de_actividades:['']
-  })
-}
-
- enviarExperiencia() {
-   console.log('fomulario');
-   this.experienciaService.save(this.formularioExperiencia.value).subscribe();
-   this.ruta.navigateByUrl('/portfolio');
+  constructor(
+    public formularioExp: FormBuilder,
+    private experienciaService: ExperienciaService,
+    private ruta: Router
+  ) {
+    this.formularioExperiencia = this.formularioExp.group({
+      lugar_de_trabajo: ['Arg Prog', [Validators.required]],
+      titulo_del_puesto: ['Programadora', [Validators.required]],
+      url_logo_empresa: ['sdfsdgdfg', [Validators.required]],
+      descripcion_de_actividades: ['programo', [Validators.required]],
+      fecha_de_actividad: ['dd/MM/yyyy', [Validators.required]],
+    });
   }
-
-
+  get LugarDeTrabajo() {
+    return this.formularioExperiencia.get('lugar_de_trabajo');
+  }
+  get TituloDelPuesto() {
+    return this.formularioExperiencia.get('titulo_del_puesto');
+  }
+  get UrlLogoEmpresa() {
+    return this.formularioExperiencia.get('url_logo_empresa');
+  }
+  get DescripcionDeActividades() {
+    return this.formularioExperiencia.get('descripcion_de_actividades');
+  }
+  get FechaDeActividad() {
+    return this.formularioExperiencia.get('fecha_de_actividad');
+  }
+  enviarExperiencia() {
+    console.log('fomulario');
+    this.experienciaService.save(this.formularioExperiencia.value).subscribe();
+    this.ruta.navigateByUrl('/portfolio');
+  }
 }

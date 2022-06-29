@@ -3,20 +3,20 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Banner } from '../modelos/banner';
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BannerService {
-
   bannerUrl = 'http://localhost:8080/api/banner/';
 
-  constructor(private http: HttpClient) {
-  }
+  constructor(private http: HttpClient) {}
   public detail(id: number): Observable<Banner> {
     return this.http.get<Banner>(this.bannerUrl + `detail/${id}`);
   }
 
   public detailName(primera_descripcion: string): Observable<Banner> {
-    return this.http.get<Banner>(this.bannerUrl + `detailname/${primera_descripcion}`);
+    return this.http.get<Banner>(
+      this.bannerUrl + `detailname/${primera_descripcion}`
+    );
   }
   public lista(): Observable<Banner[]> {
     return this.http.get<Banner[]>(this.bannerUrl + 'lista');
@@ -26,7 +26,7 @@ export class BannerService {
     return this.http.post<Banner>(this.bannerUrl + 'create', banner);
   }
 
-  public update(id:number, banner: Banner): Observable<Banner> {
+  public update(id: number, banner: Banner): Observable<Banner> {
     return this.http.put<Banner>(this.bannerUrl + `update/${id}`, banner);
   }
 
