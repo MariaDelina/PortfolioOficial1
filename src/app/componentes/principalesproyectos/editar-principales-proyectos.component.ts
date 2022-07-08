@@ -53,7 +53,7 @@ export class EditarPrincipalesProyectosComponent {
     this.principalesProyectosService
       .update(this.formId, this.formularioPrincipalesProyectos.value)
       .subscribe(() => {
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('lista');
       });
   }
 }

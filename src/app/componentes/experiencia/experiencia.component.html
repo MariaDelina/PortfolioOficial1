@@ -2,9 +2,11 @@
   <section class="seccion" id="works">
     <section class="seccion about" id="about">
       <h2 class="h2">Experiencia Laboral</h2>
+      <div *ngIf="isAdmin">
       <button class="btn btn-primary-outline" routerLink="/nueva-experiencia">
         Agregar
       </button>
+    </div>
       <form *ngFor="let experiencia of experiencias">
         <form class="form-container-proyectos">
           <div>{{ experiencia.lugar_de_trabajo }}</div>
@@ -18,11 +20,12 @@
           <div>{{ experiencia.fecha_de_actividad }}</div>
           <hr />
         </form>
+        <div *ngIf="isAdmin">
         <button
           class="icono-editar"
           routerLink="/editar-experiencia/{{ experiencia.id }}"
         >
-          <i class="bi bi-pencil"></i>Editar
+          <i class="bi bi-pencil"></i>
         </button>
         <button
           class="icono-borrar"
@@ -32,6 +35,7 @@
         >
           <i class="bi bi-x-circle"></i>
         </button>
+      </div>
       </form>
     </section>
   </section>

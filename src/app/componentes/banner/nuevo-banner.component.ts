@@ -36,6 +36,6 @@ export class NuevoBannerComponent {
   enviarBanner() {
     console.log('fomulario');
     this.bannerService.save(this.formularioBanner.value).subscribe();
-    this.ruta.navigateByUrl('/portfolio');
+    this.ruta.navigateByUrl('/lista');
   }
 }

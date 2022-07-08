@@ -39,13 +39,13 @@ export class EditarPresentacionComponent {
     return this.formularioPresentacion.get('nombre_y_apellido');
   }
   get Puesto() {
-    return this.formularioPresentacion.get('puestol');
+    return this.formularioPresentacion.get('puesto');
   }
   enviarPresentacion(): any {
     this.presentacionService
       .update(this.formId, this.formularioPresentacion.value)
       .subscribe(() => {
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('lista');
       });
   }
 }

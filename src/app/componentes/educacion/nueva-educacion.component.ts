@@ -48,6 +48,6 @@ export class NuevaEducacionComponent {
   enviarEducacion() {
     console.log('fomulario');
     this.educacionService.save(this.formularioEducacion.value).subscribe();
-    this.ruta.navigateByUrl('/portfolio');
+    this.ruta.navigateByUrl('/lista');
   }
 }

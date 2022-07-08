@@ -3,13 +3,14 @@
     <div class="col-md-4 mx-auto">
       <form [formGroup]="formularioProyectos" (ngSubmit)="enviarProyectos()">
         <div class="mb-3">
+          <h6>Nombre de proyecto</h6>
           <label for="" class="form-label"></label>
           <input
             formControlName="nombre_de_proyecto"
             type="text"
             class="form-control"
             aria.describedby="helpId"
-            placeholder="edita tu descripcion"
+            placeholder="nombre de proyecto"
           />
         </div>
         <div *ngIf="NombreDeProyecto?.errors && NombreDeProyecto?.touched">
@@ -18,13 +19,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Descripción del proyecto</h6>
           <label for="" class="form-label"></label>
           <input
             formControlName="descripcion_del_proyecto"
             type="text"
             class="form-control"
             aria.describedby="helpId"
-            placeholder="edita tu descripcion"
+            placeholder="descripcion del proyecto"
           />
         </div>
         <div
@@ -40,13 +42,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Link de evidencia</h6>
           <label for="" class="form-label"></label>
           <input
             formControlName="link_de_evidencia"
             type="text"
             class="form-control"
             aria.describedby="helpId"
-            placeholder="edita tu descripcion"
+            placeholder="Link de evidencia"
           />
         </div>
         <div *ngIf="LinkDeEvidencia?.errors && LinkDeEvidencia?.touched">
@@ -55,13 +58,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Fecha de realización</h6>
           <label for="" class="form-label"></label>
           <input
             formControlName="fecha_de_realizacion"
             type="date"
             class="form-control"
             aria.describedby="helpId"
-            placeholder="edita tu descripcion"
+            placeholder="fecha de realizacion"
           />
         </div>
         <div *ngIf="FechaDeRealizacion?.errors && FechaDeRealizacion?.touched">
@@ -74,7 +78,7 @@
         </div>
         <div class="btn-group" role="group" aria-label="">
           <button type="submit" class="btn btn-succes">Editar</button>
-          <button class="btn btn-primary">Cancelar</button>
+          <button class="btnn">Cancelar</button>
         </div>
       </form>
     </div>

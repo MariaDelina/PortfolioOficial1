@@ -2,9 +2,11 @@
   <section class="seccion" id="works">
     <section class="seccion about" id="about">
       <h2 class="h2">Educacion</h2>
+      <div *ngIf="isAdmin">
       <button class="btn btn-primary-outline" routerLink="/nueva-educacion">
         Agregar
       </button>
+    </div>
       <form *ngFor="let educacion of educaciones">
         <form class="form-container-proyectos">
           <div>{{ educacion.certificaciones }}</div>
@@ -20,11 +22,12 @@
           <div>{{ educacion.hasta_periodo_ano }}</div>
           <hr />
         </form>
+        <div *ngIf="isAdmin">
         <button
           class="icono-editar"
           routerLink="/editar-educacion/{{ educacion.id }}"
         >
-          <i class="bi bi-pencil"></i>Editar
+          <i class="bi bi-pencil"></i>
         </button>
         <button
           class="icono-borrar"
@@ -34,6 +37,7 @@
         >
           <i class="bi bi-x-circle"></i>
         </button>
+      </div>
       </form>
     </section>
   </section>

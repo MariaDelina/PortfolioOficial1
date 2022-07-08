@@ -25,7 +25,7 @@ export class NuevaPresentacionComponent {
     return this.formularioPresentacion.get('nombre_y_apellido');
   }
   get Puesto() {
-    return this.formularioPresentacion.get('puestol');
+    return this.formularioPresentacion.get('puesto');
   }
 
   enviarPresentacion() {
@@ -33,6 +33,6 @@ export class NuevaPresentacionComponent {
     this.presentacionService
       .save(this.formularioPresentacion.value)
       .subscribe();
-    this.ruta.navigateByUrl('/portfolio');
+    this.ruta.navigateByUrl('/lista');
   }
 }

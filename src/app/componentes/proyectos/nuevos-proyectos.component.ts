@@ -40,6 +40,6 @@ export class NuevosProyectosComponent {
   enviarProyectos() {
     console.log('fomulario');
     this.proyectosService.save(this.formularioProyectos.value).subscribe();
-    this.ruta.navigateByUrl('/portfolio');
+    this.ruta.navigateByUrl('/lista');
   }
 }

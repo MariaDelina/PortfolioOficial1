@@ -49,7 +49,7 @@ export class EditarBannerComponent {
     this.bannerService
       .update(this.formId, this.formularioBanner.value)
       .subscribe(() => {
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('/lista');
       });
   }
 }

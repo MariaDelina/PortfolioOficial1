@@ -5,16 +5,19 @@
         <form
           [formGroup]="formularioPresentacion"
           (ngSubmit)="enviarPresentacion()"
+          #myForm="ngForm"
+          novalidate
+          class="form-input"
         >
           <div class="mb-3">
             <label for="" class="form-label"></label>
-            <h6>Agregar nombre y apellido</h6>
+            <h6>Nombre y apellido</h6>
             <input
               type="text"
               class="form-control"
               formControlName="nombre_y_apellido"
               aria.describedby="helpId"
-              placeholder="agrege su nombre y apellido"
+              placeholder="Nombre y apellido"
             />
           </div>
           <div *ngIf="NombreYApellido?.errors && NombreYApellido?.touched">
@@ -27,13 +30,13 @@
           </div>
           <div class="mb-3">
             <label for="" class="form-label"></label>
-            <h6>Agregar puesto en el que se desempeña</h6>
+            <h6>Puesto en el que se desempeña</h6>
             <input
               type="text"
               class="form-control"
               formControlName="puesto"
               aria.describedby="helpId"
-              placeholder="agrege el puesto en el que trabaja"
+              placeholder="Puesto en el que trabaja"
             />
           </div>
           <div *ngIf="Puesto?.errors && Puesto?.touched">
@@ -42,8 +45,8 @@
             </p>
           </div>
           <div class="btn-group" role="group" aria-label="">
-            <button type="submit" class="btn btn-succes">Agregar</button>
-            <button class="btn btn-primary">Cancelar</button>
+            <button type="submit" class="btn btn-succes" [disabled]="!myForm.valid">Agregar</button>
+            <button class="btnn">Cancelar</button>
           </div>
         </form>
       </div>

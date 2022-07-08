@@ -7,13 +7,13 @@
       >
         <div class="mb-3">
           <label for="" class="form-label"></label>
-          <h6>Editar nombre y apellido</h6>
+          <h6>Nombre y apellido</h6>
           <input
             formControlName="nombre_y_apellido"
             type="text"
             class="form-control"
             aria.describedby="helpId"
-            placeholder="agrege su nombre y apellido"
+            placeholder="Nombre y apellido"
           />
         </div>
         <div *ngIf="NombreYApellido?.errors && NombreYApellido?.touched">
@@ -23,13 +23,13 @@
         </div>
         <div class="mb-3">
           <label for="" class="form-label"></label>
-          <h6>Editar puesto en el que se desempeña</h6>
+          <h6>Puesto en el que se desempeña</h6>
           <input
             formControlName="puesto"
             type="text"
             class="form-control"
             aria.describedby="helpId"
-            placeholder="agrege el puesto en el que se desempeña"
+            placeholder="Puesto en el que se desempeña"
           />
         </div>
         <div *ngIf="Puesto?.errors && Puesto?.touched">
@@ -39,7 +39,7 @@
         </div>
         <div class="btn-group" role="group" aria-label="">
           <button type="submit" class="btn btn-succes">Editar</button>
-          <button class="btn btn-primary">Cancelar</button>
+          <button class="btnn">Cancelar</button>
         </div>
       </form>
     </div>

@@ -3,16 +3,17 @@
     <div class="col-md-4 mx-auto">
       <form
         [formGroup]="formularioExperiencia"
-        (ngSubmit)="enviarExperiencia()"
+        (ngSubmit)="cambiarExperiencia()"
       >
         <div class="mb-3">
+          <h6>Lugar de trabajo</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="lugar_de_trabajo"
             aria.describedby="helpId"
-            placeholder="escriba el lugar de trabajo"
+            placeholder="Lugar de trabajo"
           />
         </div>
         <div *ngIf="LugarDeTrabajo?.errors && LugarDeTrabajo?.touched">
@@ -21,13 +22,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Titulo del puesto ocupado</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="titulo_del_puesto"
             aria.describedby="helpId"
-            placeholder="escribe el titulo del puesto ocupado"
+            placeholder="Titulo del puesto ocupado"
           />
         </div>
         <div *ngIf="TituloDelPuesto?.errors && TituloDelPuesto?.touched">
@@ -36,13 +38,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Url del logo de su empresa</h6>
           <label for="" class="form-label"></label>
           <input
             type="file"
             class="form-control"
             formControlName="url_logo_empresa"
             aria.describedby="helpId"
-            placeholder="escribe la Url del logo de su empresa"
+            placeholder="Url del logo de su empresa"
           />
         </div>
         <div *ngIf="UrlLogoEmpresa?.errors && UrlLogoEmpresa?.touched">
@@ -51,13 +54,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Descripcion de las actividades desarrollada</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="descripcion_de_actividades"
             aria.describedby="helpId"
-            placeholder="escribe la descripcion de las actividades desarrolladas"
+            placeholder="descripcion de las actividades desarrolladas"
           />
         </div>
         <div
@@ -74,13 +78,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Fecha de actividad</h6>
           <label for="" class="form-label"></label>
           <input
             formControlName="fecha_de_actividad"
             type="date"
             class="form-control"
             aria.describedby="helpId"
-            placeholder="edita tu descripcion"
+            placeholder="fecha de actividad"
           />
         </div>
         <div *ngIf="FechaDeActividad?.errors && FechaDeActividad?.touched">
@@ -90,7 +95,7 @@
         </div>
         <div class="btn-group" role="group" aria-label="">
           <button type="submit" class="btn btn-succes">Editar</button>
-          <button class="btn btn-primary">Cancelar</button>
+          <button class="btnn">Cancelar</button>
         </div>
       </form>
     </div>

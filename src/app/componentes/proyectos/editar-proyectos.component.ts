@@ -56,7 +56,7 @@ export class EditarProyectosComponent {
     this.proyectosService
       .update(this.formId, this.formularioProyectos.value)
       .subscribe(() => {
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('lista');
       });
   }
 }

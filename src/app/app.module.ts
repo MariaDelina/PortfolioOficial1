@@ -4,6 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { ToastrModule } from 'ngx-toastr';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
+import { RouterModule } from '@angular/router';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,6 +13,8 @@ import { PortfolioComponent } from './componentes/portfolio/portfolio.component'
 import { PresentacionComponent } from './componentes/presentacion/presentacion.component';
 import { ProyectosComponent } from './componentes/proyectos/proyectos.component';
 import { BannerComponent } from './componentes/banner/banner.component';
+import { NuevoBannerComponent } from './componentes/banner/nuevo-banner.component';
+import { EditarBannerComponent } from './componentes/banner/editar-banner.component';
 import { FondoComponent } from './componentes/fondo/fondo.component';
 import { NuevosProyectosComponent } from './componentes/proyectos/nuevos-proyectos.component';
 import { EditarProyectosComponent } from './componentes/proyectos/editar-proyectos.component';
@@ -25,9 +29,9 @@ import { EditarExperienciaComponent } from './componentes/experiencia/editar-exp
 import { EducacionComponent } from './componentes/educacion/educacion.component';
 import { EditarEducacionComponent } from './componentes/educacion/editar-educacion.component';
 import { NuevaEducacionComponent } from './componentes/educacion/nueva-educacion.component';
-import { NuevoBannerComponent } from './componentes/banner/nuevo-banner.component';
-import { EditarBannerComponent } from './componentes/banner/editar-banner.component';
 import { LoginComponent } from './componentes/login/login.component';
+import { interceptorProvider, ProdInterceptorService } from './interceptors/prod-interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -36,6 +40,8 @@ import { LoginComponent } from './componentes/login/login.component';
     PresentacionComponent,
     ProyectosComponent,
     BannerComponent,
+    NuevoBannerComponent,
+    EditarBannerComponent,
     FondoComponent,
     NuevosProyectosComponent,
     EditarProyectosComponent,
@@ -52,9 +58,7 @@ import { LoginComponent } from './componentes/login/login.component';
     EditarEducacionComponent,
     NuevaEducacionComponent,
     BannerComponent,
-    NuevoBannerComponent,
-    EditarBannerComponent,
-    LoginComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -62,10 +66,14 @@ import { LoginComponent } from './componentes/login/login.component';
     ToastrModule.forRoot(),
     HttpClientModule,
     FormsModule,
+    CommonModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    RouterModule 
   ],
-  providers: [],
+  providers: [
+    interceptorProvider
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

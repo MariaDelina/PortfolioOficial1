@@ -1,15 +1,16 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
-      <form [formGroup]="formularioProyectos" (ngSubmit)="enviarProyectos()">
+      <form #myForm="ngForm" novalidate class="form-input" [formGroup]="formularioProyectos" (ngSubmit)="enviarProyectos()">
         <div class="mb-3">
+          <h6>Nombre del proyecto</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="nombre_de_proyecto"
             aria.describedby="helpId"
-            placeholder="escribe el nombre de tu proyecto"
+            placeholder="nombre de tu proyecto"
           />
         </div>
         <div *ngIf="NombreDeProyecto?.errors && NombreDeProyecto?.touched">
@@ -18,13 +19,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Descripción del proyecto</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="descripcion_del_proyecto"
             aria.describedby="helpId"
-            placeholder="escribe una descripcion de tu proyecto"
+            placeholder="descripción de tu proyecto"
           />
         </div>
         <div
@@ -40,13 +42,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Link de evidencia</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="link_de_evidencia"
             aria.describedby="helpId"
-            placeholder="escribe la Url de tu proyecto"
+            placeholder="Url de tu proyecto"
           />
         </div>
         <div *ngIf="LinkDeEvidencia?.errors && LinkDeEvidencia?.touched">
@@ -55,13 +58,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Fecha de realización</h6>
           <label for="" class="form-label"></label>
           <input
             type="date"
             class="form-control"
             formControlName="fecha_de_realizacion"
             aria.describedby="helpId"
-            placeholder="escribe la fecha de realizacion de tu proyecto"
+            placeholder="fecha de realización de tu proyecto"
           />
         </div>
         <div *ngIf="FechaDeRealizacion?.errors && FechaDeRealizacion?.touched">
@@ -73,8 +77,8 @@
           </p>
         </div>
         <div class="btn-group" role="group" aria-label="">
-          <button type="submit" class="btn btn-succes">Agregar</button>
-          <button class="btn btn-primary">Cancelar</button>
+          <button type="submit" class="btn btn-succes" [disabled]="!myForm.valid">Agregar</button>
+          <button class="btnn">Cancelar</button>
         </div>
       </form>
     </div>

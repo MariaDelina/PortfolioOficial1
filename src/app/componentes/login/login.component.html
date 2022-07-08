@@ -1,27 +1,24 @@
+<ng-container *ngIf="isLogged; else loggedOut">r</ng-container>
+<ng-template #loggedOut>
 <div class="container-login">
   <div class="form-container-login">
-    <form #myForm="ngForm" class="form-input">
+    <form #myForm="ngForm" (ngSubmit)="onLogin()" novalidate class="form-input">
       <h1>Login</h1>
-      <div class="div-nombre-login" id="input-login">
-        <label for="name" class="login">Nombre</label>
-        <input type="text" class="input-login" name="name" required id="name" />
+      <div>
+        <label for="nombreUsuario">Nombre de Usuario</label>
+        <input type="text" name="nombreUsuario" id="nombreUsuario" class="form-control" [(ngModel)]="nombreUsuario"  required>
       </div>
-      <div class="div-password-login" id="input-login">
-        <label for="password" class="login">Password</label>
-        <input
-          type="text"
-          class="input-login"
-          name="password"
-          required
-          id="password"
-        />
+      <div class="form-group">
+        <label for="password">Contraseña</label>
+        <input type="password" name="password" id="password" class="form-control" [(ngModel)]="password" required>
       </div>
-      <button type="submit" [disabled]="myForm.invalid" class="button-login">
-        Registrar
-      </button>
+      <div class="form-group">
+        <button class="button-login" [disabled]="!myForm.valid">Login</button>
+      </div>
     </form>
   </div>
 </div>
+</ng-template>
 <div class="circulos">
   <svg
     class="circulo circulo1"

@@ -3,6 +3,7 @@ import { Proyectos } from 'src/app/modelos/proyectos';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-proyectos',
@@ -11,11 +12,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ProyectosComponent implements OnInit {
   proyectos: Proyectos[] = [];
+  roles: string[] = [];
+  isAdmin: boolean = false;
 
   constructor(
     private proyectosService: ProyectosService,
     private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private tokenService: TokenService
   ) {}
 
   ngOnInit() {
@@ -28,6 +32,12 @@ export class ProyectosComponent implements OnInit {
         console.log(err);
       },
     });
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach( rol => {
+      if(rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    })
   }
   borrar(id: any, proyectos: any) {
     if (window.confirm('¿Desea borrar el registro?')) {

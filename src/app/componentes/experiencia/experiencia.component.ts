@@ -3,6 +3,7 @@ import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 import { Experiencia } from 'src/app/modelos/experiencia';
+import { TokenService } from 'src/app/servicios/token.service';
 @Component({
   selector: 'app-experiencia',
   templateUrl: './experiencia.component.html',
@@ -10,11 +11,14 @@ import { Experiencia } from 'src/app/modelos/experiencia';
 })
 export class ExperienciaComponent implements OnInit {
   experiencias: Experiencia[] = [];
+  roles: string[] = [];
+  isAdmin: boolean = false;
 
   constructor(
     private experienciaService: ExperienciaService,
     private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private tokenService: TokenService
   ) {}
 
   ngOnInit() {
@@ -27,6 +31,12 @@ export class ExperienciaComponent implements OnInit {
         console.log(err);
       },
     });
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach( rol => {
+      if(rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    })
   }
   borrar(id: any, experiencia: any) {
     if (window.confirm('¿Desea borrar el registro?')) {

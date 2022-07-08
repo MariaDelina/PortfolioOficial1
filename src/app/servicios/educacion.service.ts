@@ -6,7 +6,7 @@ import { Educacion } from '../modelos/educacion';
   providedIn: 'root',
 })
 export class EducacionService {
-  educacionUrl = 'http://localhost:8080/api/educacion/';
+  educacionUrl = 'https://app-presentacion.herokuapp.com/api/educacion/';
 
   constructor(private http: HttpClient) {}
   public detail(id: number): Observable<Educacion> {

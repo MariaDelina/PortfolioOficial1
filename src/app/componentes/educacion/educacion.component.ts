@@ -3,6 +3,7 @@ import { Educacion } from 'src/app/modelos/educacion';
 import { EducacionService } from 'src/app/servicios/educacion.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-educacion',
@@ -11,11 +12,14 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class EducacionComponent implements OnInit {
   educaciones: Educacion[] = [];
+  roles: string[] = [];
+  isAdmin: boolean = false;
 
   constructor(
     private educacionService: EducacionService,
     private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private tokenService: TokenService
   ) {}
 
   ngOnInit() {
@@ -28,6 +32,12 @@ export class EducacionComponent implements OnInit {
         console.log(err);
       },
     });
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach( rol => {
+      if(rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    })
   }
   borrar(id: any, educaciones: any) {
     if (window.confirm('¿Desea borrar el registro?')) {

@@ -58,11 +58,11 @@ export class EditarExperienciaComponent {
   get FechaDeActividad() {
     return this.formularioExperiencia.get('fecha_de_actividad');
   }
-  enviarExperiencia(): any {
+  cambiarExperiencia(): any {
     this.experienciaService
       .update(this.formId, this.formularioExperiencia.value)
       .subscribe(() => {
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('/lista');
       });
   }
 }

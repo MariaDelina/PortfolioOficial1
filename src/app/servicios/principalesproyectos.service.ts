@@ -7,7 +7,7 @@ import { PrincipalesProyectos } from '../modelos/principales-proyectos';
   providedIn: 'root',
 })
 export class PrincipalesproyectosService {
-  principalesProyectosUrl = 'http://localhost:8080/api/principales_proyectos/';
+  principalesProyectosUrl = 'https://app-presentacion.herokuapp.com/api/principales_proyectos/';
 
   constructor(private http: HttpClient) {}
   public detail(id: number): Observable<PrincipalesProyectos> {

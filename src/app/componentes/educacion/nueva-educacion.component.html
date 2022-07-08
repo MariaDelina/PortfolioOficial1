@@ -1,15 +1,16 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
-      <form [formGroup]="formularioEducacion" (ngSubmit)="enviarEducacion()">
+      <form #myForm="ngForm" novalidate class="form-input" [formGroup]="formularioEducacion" (ngSubmit)="enviarEducacion()">
         <div class="mb-3">
+          <h6>Certificacion de tu educacion</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="certificaciones"
             aria.describedby="helpId"
-            placeholder="coloca la certificacion de tu educacion"
+            placeholder="Certificacion de tu educacion"
           />
         </div>
         <div *ngIf="Certificaciones?.errors && Certificaciones?.touched">
@@ -18,13 +19,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Infomacion de tu instituto</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="info_de_instituto"
             aria.describedby="helpId"
-            placeholder="escribe la infomacion de tu instituto"
+            placeholder="Infomacion de tu instituto"
           />
         </div>
         <div *ngIf="InfoDeInstituto?.errors && InfoDeInstituto?.touched">
@@ -33,13 +35,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Url del logo del instituto</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="url_logo_instituto"
             aria.describedby="helpId"
-            placeholder="escribe la Url del logo del instituto"
+            placeholder="Url del logo del instituto"
           />
         </div>
         <div *ngIf="UrlLogoInstituto?.errors && UrlLogoInstituto?.touched">
@@ -48,13 +51,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Nombre de tu carrera</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="nombre_carrera"
             aria.describedby="helpId"
-            placeholder="escribe el nombre de tu carrera"
+            placeholder="Nombre de tu carrera"
           />
         </div>
         <div *ngIf="NombreCarrera?.errors && NombreCarrera?.touched">
@@ -63,13 +67,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Fecha de inicio de tus estudios</h6>
           <label for="" class="form-label"></label>
           <input
             type="date"
             class="form-control"
             formControlName="desde_periodo_ano"
             aria.describedby="helpId"
-            placeholder="escribe la fecha de inicio de tus estudios"
+            placeholder="Fecha de inicio de tus estudios"
           />
         </div>
         <div *ngIf="DesdePeriodoAno?.errors && DesdePeriodoAno?.touched">
@@ -78,13 +83,15 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Finalización de tus estudios</h6>
           <label for="" class="form-label"></label>
           <input
             type="date"
             class="form-control"
             formControlName="hasta_periodo_ano"
             aria.describedby="helpId"
-            placeholder="escribe la fecha de finalización de tus estudios"
+            placeholder="Finalización de tus estudios"
+            required
           />
         </div>
         <div *ngIf="HastaPeriodoAno?.errors && HastaPeriodoAno?.touched">
@@ -93,8 +100,8 @@
           </p>
         </div>
         <div class="btn-group" role="group" aria-label="">
-          <button type="submit" class="btn btn-succes">Agregar</button>
-          <button class="btn btn-primary">Cancelar</button>
+          <button type="submit" class="btn btn-succes" [disabled]="!myForm.valid">Agregar</button>
+          <button class="btnn" routerLink="/lista">Cancelar</button>
         </div>
       </form>
     </div>

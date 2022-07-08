@@ -1,19 +1,23 @@
-<div class="agregar">
-  <div class="container">
+<div>
+  <div>
     <div class="row mt-5">
       <div class="col-md-4 mx-auto">
         <form
           [formGroup]="formularioPrincipalesProyectos"
           (ngSubmit)="enviarPrincipalesProyectos()"
+          #myForm="ngForm"
+          novalidate
+          class="form-input"
         >
           <div class="mb-3">
+            <h6>Url del primer proyecto principal</h6>
             <label for="" class="form-label"></label>
             <input
               type="text"
               class="form-control"
               formControlName="url_primer_proyecto_principal"
               aria.describedby="helpId"
-              placeholder="agrege la url del primer proyecto principal"
+              placeholder="url del primer proyecto principal"
             />
           </div>
           <div
@@ -30,13 +34,14 @@
             </p>
           </div>
           <div class="mb-3">
+            <h6>Url del segundo proyecto principal</h6>
             <label for="" class="form-label"></label>
             <input
               type="text"
               class="form-control"
               formControlName="url_segundo_proyecto_principal"
               aria.describedby="helpId"
-              placeholder="agrege la url del segundo proyecto principal"
+              placeholder="url del segundo proyecto principal"
             />
           </div>
           <div
@@ -53,8 +58,8 @@
             </p>
           </div>
           <div class="btn-group" role="group" aria-label="">
-            <button type="submit" class="btn btn-succes">Agregar</button>
-            <button class="btn btn-primary">Cancelar</button>
+            <button type="submit" class="btn" [disabled]="!myForm.valid">Agregar</button>
+            <button class="btnn">Cancelar</button>
           </div>
         </form>
       </div>

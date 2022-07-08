@@ -175,13 +175,14 @@
   border: 0px solid rgb(230, 220, 209);
   padding: 50px 60px;
   margin-top: 20vh;
-  -webkit-box-shadow: 10px 10px 10px 10px rgb(232, 229, 220);
-  -moz-box-shadow: 10px 10px 10px 10px rgb(242, 238, 225);
-  box-shadow: 10px 10px 10px 10px rgb(236, 231, 218);
+  -webkit-box-shadow: 5px 5px 5px 5px rgb(232, 229, 220);
+  -moz-box-shadow: 5px 5px 5px 5px rgb(242, 238, 225);
+  box-shadow: 3px 3px 3px 3px rgb(236, 231, 218);
   box-sizing: content-box;
 }
 .btn-primary-outline {
   background-color: transparent;
+  color: rgb(238, 238, 213);
   border-color: rgb(230, 220, 209);
   border-radius: 50%;
   box-shadow: rgb(230, 220, 209);
@@ -227,6 +228,7 @@
   margin-top: 20vh;
   -webkit-box-shadow: 10px 10px 37px 28px rgb(232, 229, 220);
   -moz-box-shadow: 10px 10px 37px 28px rgb(242, 238, 225);
-  box-shadow: 10px 10px 37px 28px rgb(236, 231, 218);
+  box-shadow: 3px 3px 3px 3px rgb(236, 231, 218);
   box-sizing: content-box;
 }
+

@@ -65,7 +65,8 @@ export class EditarEducacionComponent {
     this.educacionService
       .update(this.formId, this.formularioEducacion.value)
       .subscribe(() => {
-        this.router.navigateByUrl('/portfolio');
+        this.router.navigateByUrl('/lista');
       });
   }
 }
+

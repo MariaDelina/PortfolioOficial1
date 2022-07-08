@@ -6,7 +6,7 @@ import { Banner } from '../modelos/banner';
   providedIn: 'root',
 })
 export class BannerService {
-  bannerUrl = 'http://localhost:8080/api/banner/';
+  bannerUrl = 'https://app-presentacion.herokuapp.com/api/banner/';
 
   constructor(private http: HttpClient) {}
   public detail(id: number): Observable<Banner> {

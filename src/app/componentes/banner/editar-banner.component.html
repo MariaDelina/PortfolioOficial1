@@ -3,13 +3,14 @@
     <div class="col-md-4 mx-auto">
       <form [formGroup]="formularioBanner" (ngSubmit)="enviarBanner()">
         <div class="mb-3">
+          <h6>Descripcion de sus potencialidades</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="primera_descripcion"
             aria.describedby="helpId"
-            placeholder="agrege una descripcion de sus potencialidades"
+            placeholder="Descripcion de sus potencialidades"
           />
         </div>
         <div *ngIf="PrimeraDescripcion?.errors && PrimeraDescripcion?.touched">
@@ -21,13 +22,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Descripcion de sus potencialidades</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="segunda_descripcion"
             aria.describedby="helpId"
-            placeholder="agrege una descripcion de sus potencialidades"
+            placeholder="Descripcion de sus potencialidades"
           />
         </div>
         <div *ngIf="SegundaDescripcion?.errors && SegundaDescripcion?.touched">
@@ -39,13 +41,14 @@
           </p>
         </div>
         <div class="mb-3">
+          <h6>Descripcion de sus potencialidades</h6>
           <label for="" class="form-label"></label>
           <input
             type="text"
             class="form-control"
             formControlName="tercera_descripcion"
             aria.describedby="helpId"
-            placeholder="agrege una descripcion de sus potencialidades"
+            placeholder="Descripcion de sus potencialidades"
           />
         </div>
         <div *ngIf="TerceraDescripcion?.errors && TerceraDescripcion?.touched">
@@ -58,7 +61,7 @@
         </div>
         <div class="btn-group" role="group" aria-label="">
           <button type="submit" class="btn btn-succes">Editar</button>
-          <button class="btn btn-primary">Cancelar</button>
+          <button class="btnn">Cancelar</button>
         </div>
       </form>
     </div>

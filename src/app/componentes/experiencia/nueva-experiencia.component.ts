@@ -17,11 +17,11 @@ export class NuevaExperienciaComponent {
     private ruta: Router
   ) {
     this.formularioExperiencia = this.formularioExp.group({
-      lugar_de_trabajo: ['Arg Prog', [Validators.required]],
-      titulo_del_puesto: ['Programadora', [Validators.required]],
-      url_logo_empresa: ['sdfsdgdfg', [Validators.required]],
-      descripcion_de_actividades: ['programo', [Validators.required]],
-      fecha_de_actividad: ['dd/MM/yyyy', [Validators.required]],
+      lugar_de_trabajo: ['', [Validators.required]],
+      titulo_del_puesto: ['', [Validators.required]],
+      url_logo_empresa: ['', [Validators.required]],
+      descripcion_de_actividades: ['', [Validators.required]],
+      fecha_de_actividad: ['', [Validators.required]],
     });
   }
   get LugarDeTrabajo() {
@@ -42,6 +42,6 @@ export class NuevaExperienciaComponent {
   enviarExperiencia() {
     console.log('fomulario');
     this.experienciaService.save(this.formularioExperiencia.value).subscribe();
-    this.ruta.navigateByUrl('/portfolio');
+    this.ruta.navigateByUrl('/lista');
   }
 }

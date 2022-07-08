@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Banner } from 'src/app/modelos/banner';
 import { BannerService } from 'src/app/servicios/banner.service';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-banner',
@@ -12,11 +13,14 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class BannerComponent {
   banner: Banner[] = [];
+  roles: string[] = [];
+  isAdmin: boolean = false;
 
   constructor(
     private bannerService: BannerService,
     private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private tokenService: TokenService
   ) {}
 
   ngOnInit() {
@@ -29,6 +33,12 @@ export class BannerComponent {
         console.log(err);
       },
     });
+    this.roles = this.tokenService.getAuthorities();
+    this.roles.forEach( rol => {
+      if(rol === 'ROLE_ADMIN') {
+        this.isAdmin = true;
+      }
+    })
   }
 
   borrar(id: any, banner: any) {

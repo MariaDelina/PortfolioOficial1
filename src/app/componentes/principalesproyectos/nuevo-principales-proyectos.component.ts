@@ -37,6 +37,6 @@ export class NuevosPrincipalesProyectosComponent {
     this.principalesProyectosService
       .save(this.formularioPrincipalesProyectos.value)
       .subscribe();
-    this.ruta.navigateByUrl('/portfolio');
+    this.ruta.navigateByUrl('/lista');
   }
 }
