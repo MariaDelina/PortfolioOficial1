@@ -1,39 +1,54 @@
 <div class="main">
   <section class="seccion" id="works">
-    <section class="seccion about" id="about">
+    <section  id="about">
       <h2 class="h2">Descripcion de los Proyectos y otros</h2>
-      <div *ngIf="isAdmin">
-      <button class="btn btn-primary-outline" routerLink="/nuevos-proyectos">
-        Agregar
-      </button>
-    </div>
-      <form *ngFor="let proyecto of proyectos">
-        <form class="form-container-proyectos">
-          <div>{{ proyecto.nombre_de_proyecto }}</div>
-          <hr />
-          <div>{{ proyecto.descripcion_del_proyecto }}</div>
-          <hr />
-          <div>{{ proyecto.link_de_evidencia }}</div>
-          <hr />
-          <div>{{ proyecto.fecha_de_realizacion }}</div>
-          <hr />
-        </form>
-        <div *ngIf="isAdmin">
-        <button
-          class="icono-editar"
-          routerLink="/editar-proyectos/{{ proyecto.id }}"
-        >
-          <i class="bi bi-pencil"></i>
-        </button>
-        <button
-          class="icono-borrar"
-          type="button"
-          href="#"
-          (click)="borrar(proyecto.id, proyecto)"
-        >
-          <i class="bi bi-x-circle"></i>
+      <div>
+        <button class="btn btn-primary-outline" routerLink="/nuevos-proyectos">
+          Agregar
         </button>
       </div>
+      <form *ngFor="let proyecto of proyectos">
+        <form class="form-container-proyectos">
+          <div>
+            <h5>Nombre del proyecto: {{ proyecto.nombre_de_proyecto }}</h5>
+          </div>
+          <hr />
+          <div>
+            <h5>
+              Descripción del proyecto: {{ proyecto.descripcion_del_proyecto }}
+            </h5>
+          </div>
+          <hr />
+          <div >
+
+            <h5>Link de evidencia:</h5><a class="e2e-trusted-url" [href]="proyecto.link_de_evidencia"><h5 class="h5-link">{{ proyecto.link_de_evidencia }}</h5></a>
+
+          </div>
+          <hr />
+          <div>
+            <h5>
+              Fecha de realización del proyecto:
+              {{ proyecto.fecha_de_realizacion }}
+            </h5>
+          </div>
+          <hr />
+        </form>
+        <div class="div-editar">
+          <button
+            class="icono-editar"
+            routerLink="/editar-proyectos/{{ proyecto.id }}"
+          >
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button
+            class="icono-borrar"
+            type="button"
+            href="#"
+            (click)="borrar(proyecto.id, proyecto)"
+          >
+            <i class="bi bi-x-circle"></i>
+          </button>
+        </div>
       </form>
     </section>
   </section>

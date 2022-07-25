@@ -2,43 +2,61 @@
   <section class="seccion" id="works">
     <section class="seccion about" id="about">
       <h2 class="h2">Educacion</h2>
-      <div *ngIf="isAdmin">
-      <button class="btn btn-primary-outline" routerLink="/nueva-educacion">
-        Agregar
-      </button>
-    </div>
-      <form *ngFor="let educacion of educaciones">
-        <form class="form-container-proyectos">
-          <div>{{ educacion.certificaciones }}</div>
-          <hr />
-          <div>{{ educacion.info_de_instituto }}</div>
-          <hr />
-          <div>{{ educacion.url_logo_instituto }}</div>
-          <hr />
-          <div>{{ educacion.nombre_carrera }}</div>
-          <hr />
-          <div>{{ educacion.desde_periodo_ano }}</div>
-          <hr />
-          <div>{{ educacion.hasta_periodo_ano }}</div>
-          <hr />
-        </form>
-        <div *ngIf="isAdmin">
-        <button
-          class="icono-editar"
-          routerLink="/editar-educacion/{{ educacion.id }}"
-        >
-          <i class="bi bi-pencil"></i>
-        </button>
-        <button
-          class="icono-borrar"
-          type="button"
-          href="#"
-          (click)="borrar(educacion.id, educacion)"
-        >
-          <i class="bi bi-x-circle"></i>
+      <div>
+        <button class="btn btn-primary-outline" routerLink="/nueva-educacion">
+          Agregar
         </button>
       </div>
+      <form *ngFor="let educacion of educaciones">
+        <form class="form-container-proyectos">
+          <div>
+            <h5>Certificaciones: {{ educacion.certificaciones }}</h5>
+          </div>
+          <hr />
+          <div>
+            <h5>
+              Información del instituto: {{ educacion.info_de_instituto }}
+            </h5>
+          </div>
+          <hr />
+          <div>
+            <h5>
+              Url del logo del instituto: {{ educacion.url_logo_instituto }}
+            </h5>
+          </div>
+          <hr />
+          <div>
+            <h5>Nombre de la carrera: {{ educacion.nombre_carrera }}</h5>
+          </div>
+          <hr />
+          <div>
+            <h5>Año de inicio: {{ educacion.desde_periodo_ano }}</h5>
+          </div>
+          <hr />
+          <div>
+            <h5>Año de finalización: {{ educacion.hasta_periodo_ano }}</h5>
+          </div>
+          <hr />
+        </form>
+        <div class="div-editar">
+          <button
+            class="icono-editar"
+            routerLink="/editar-educacion/{{ educacion.id }}"
+          >
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button
+            class="icono-borrar"
+            type="button"
+            href="#"
+            (click)="borrar(educacion.id, educacion)"
+          >
+            <i class="bi bi-x-circle"></i>
+          </button>
+        </div>
       </form>
     </section>
   </section>
 </div>
+
+

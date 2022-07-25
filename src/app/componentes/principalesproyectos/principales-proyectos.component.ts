@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { PrincipalesProyectos } from '../../modelos/principales-proyectos';
 import { PrincipalesproyectosService } from 'src/app/servicios/principalesproyectos.service';
 import { ToastrService } from 'ngx-toastr';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
@@ -11,16 +11,19 @@ import { TokenService } from 'src/app/servicios/token.service';
   styleUrls: ['./principales-proyectos.component.css'],
 })
 export class PrincipalesProyectosComponent implements OnInit {
+
   prinProyectos: PrincipalesProyectos[] = [];
   roles: string[] = [];
-  isAdmin: boolean = false;
+  url: any;
 
   constructor(
     private principalesproyectosService: PrincipalesproyectosService,
     private toastr: ToastrService,
     private activatedRoute: ActivatedRoute,
-    private tokenService: TokenService
-  ) {}
+  ) {
+    // @ts-ignore
+    this.prinProyectos = new Array<PrincipalesProyectos>(0, "proyecto1", "proyecto2");
+  }
 
   ngOnInit() {
     this.principalesproyectosService.lista().subscribe({
@@ -32,12 +35,6 @@ export class PrincipalesProyectosComponent implements OnInit {
         console.log(err);
       },
     });
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach( rol => {
-      if(rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }
-    })
   }
   borrar(id: any, proyectos: any) {
     if (window.confirm('¿Desea borrar el registro?')) {
@@ -52,3 +49,4 @@ export class PrincipalesProyectosComponent implements OnInit {
     }
   }
 }
+

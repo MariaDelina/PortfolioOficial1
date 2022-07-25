@@ -19,6 +19,8 @@ export class NuevaPresentacionComponent {
     this.formularioPresentacion = this.formularioPres.group({
       nombre_y_apellido: ['', [Validators.required]],
       puesto: ['', [Validators.required]],
+      github: ['', [Validators.required]],
+      linkedin: ['', [Validators.required]],
     });
   }
   get NombreYApellido() {
@@ -26,6 +28,12 @@ export class NuevaPresentacionComponent {
   }
   get Puesto() {
     return this.formularioPresentacion.get('puesto');
+  }
+  get Github() {
+    return this.formularioPresentacion.get('github');
+  }
+  get Linkedin() {
+    return this.formularioPresentacion.get('linkedin');
   }
 
   enviarPresentacion() {

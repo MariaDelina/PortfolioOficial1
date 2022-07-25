@@ -1,5 +1,10 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {
+  ActivatedRouteSnapshot,
+  RouterModule,
+  RouterStateSnapshot,
+  Routes,
+} from '@angular/router';
 import { BannerComponent } from './componentes/banner/banner.component';
 import { NuevoBannerComponent } from './componentes/banner/nuevo-banner.component';
 import { EditarBannerComponent } from './componentes/banner/editar-banner.component';
@@ -21,44 +26,143 @@ import { NuevaEducacionComponent } from './componentes/educacion/nueva-educacion
 import { NuevaPresentacionComponent } from './componentes/presentacion/nueva-presentacion.component';
 import { LoginComponent } from './componentes/login/login.component';
 import { ProdGuardService as guard } from './guards/prod-guard.service';
+import { PrincipalesProyectos } from './modelos/principales-proyectos';
 
 const routes: Routes = [
-  { path: 'lista', component: PortfolioComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user']} },
-  { path: 'presentacion', component: PresentacionComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user']} },
-  { path: 'proyectos', component: ProyectosComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user']} },
-  { path: 'banner', component: BannerComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user']} },
-  { path: 'nuevo-banner', component: NuevoBannerComponent, canActivate: [guard], data: { expectedRol: ['admin']}},
-  { path: 'editar-banner/:id', component: EditarBannerComponent, canActivate: [guard], data: { expectedRol: ['admin']} },
-  { path: '', component: LoginComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'lista',
+    component: PortfolioComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'presentacion',
+    component: PresentacionComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'proyectos',
+    component: ProyectosComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'banner',
+    component: BannerComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'nuevo-banner',
+    component: NuevoBannerComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'editar-banner/:id',
+    component: EditarBannerComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
 
-  { path: 'principales-proyectos', component: PrincipalesProyectosComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user']} },
+  {
+    path: 'principales-proyectos',
+    component: PrincipalesProyectosComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
   {
     path: 'nuevos-principales-proyectos',
-    component: NuevosPrincipalesProyectosComponent, canActivate: [guard], data: { expectedRol: ['admin']}
+    component: NuevosPrincipalesProyectosComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
   },
   {
     path: 'editar-principales-proyectos/:id',
-    component: EditarPrincipalesProyectosComponent, canActivate: [guard], data: { expectedRol: ['admin']}
+    component: EditarPrincipalesProyectosComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
   },
 
-  { path: 'nuevos-proyectos', component: NuevosProyectosComponent, canActivate: [guard], data: { expectedRol: ['admin']} },
-  { path: 'editar-proyectos/:id', component: EditarProyectosComponent, canActivate: [guard], data: { expectedRol: ['admin']} },
+  {
+    path: 'nuevos-proyectos',
+    component: NuevosProyectosComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'editar-proyectos/:id',
+    component: EditarProyectosComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
 
-  { path: 'editar-presentacion/:id', component: EditarPresentacionComponent, canActivate: [guard], data: { expectedRol: ['admin']} },
-  { path: 'nueva-presentacion', component: NuevaPresentacionComponent, canActivate: [guard], data: { expectedRol: ['admin']} },
+  {
+    path: 'editar-presentacion/:id',
+    component: EditarPresentacionComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'nueva-presentacion',
+    component: NuevaPresentacionComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
 
-  { path: 'experiencia', component: ExperienciaComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user']} },
-  { path: 'editar-experiencia/:id', component: EditarExperienciaComponent, canActivate: [guard], data: { expectedRol: ['admin']} },
-  { path: 'nueva-experiencia', component: NuevaExperienciaComponent, canActivate: [guard], data: { expectedRol: ['admin']} },
+  {
+    path: 'experiencia',
+    component: ExperienciaComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'editar-experiencia/:id',
+    component: EditarExperienciaComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'nueva-experiencia',
+    component: NuevaExperienciaComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
 
-  { path: 'educacion', component: EducacionComponent, canActivate: [guard], data: { expectedRol: ['admin', 'user']} },
-  { path: 'editar-educacion/:id', component: EditarEducacionComponent, canActivate: [guard], data: { expectedRol: ['admin']} },
-  { path: 'nueva-educacion', component: NuevaEducacionComponent, canActivate: [guard], data: { expectedRol: ['admin']} },
-  { path: '**', redirectTo: '', pathMatch: 'full' },
+  {
+    path: 'educacion',
+    component: EducacionComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'editar-educacion/:id',
+    component: EditarEducacionComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'nueva-educacion',
+    component: NuevaEducacionComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+
+  { path: '**', redirectTo: '/login', pathMatch: 'full' },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
+  providers: [
+    {
+      provide: 'externalUrlRedirectResolver',
+      useValue: (route: ActivatedRouteSnapshot, state: RouterStateSnapshot) => {
+        window.location.href = (route.data as any).externalUrl;
+      },
+    },
+  ],
 })
 export class AppRoutingModule {}

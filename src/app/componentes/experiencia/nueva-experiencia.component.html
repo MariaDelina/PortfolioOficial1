@@ -4,9 +4,9 @@
       <form
         [formGroup]="formularioExperiencia"
         (ngSubmit)="enviarExperiencia()"
+        class="form-input"
         #myForm="ngForm"
         novalidate
-        class="form-input"
       >
         <div class="mb-3">
           <h6>Lugar de trabajo</h6>
@@ -17,6 +17,7 @@
             formControlName="lugar_de_trabajo"
             aria.describedby="helpId"
             placeholder="Lugar de trabajo"
+            required
           />
         </div>
         <div *ngIf="LugarDeTrabajo?.errors && LugarDeTrabajo?.touched">
@@ -33,6 +34,7 @@
             formControlName="titulo_del_puesto"
             aria.describedby="helpId"
             placeholder="Titulo del puesto ocupado"
+            required
           />
         </div>
         <div *ngIf="TituloDelPuesto?.errors && TituloDelPuesto?.touched">
@@ -45,10 +47,12 @@
           <label for="" class="form-label"></label>
           <input
             type="file"
+            accept="image/*"
             class="form-control"
             formControlName="url_logo_empresa"
             aria.describedby="helpId"
             placeholder="Url del logo de su empresa"
+            required
           />
         </div>
         <div class="mb-3">
@@ -60,6 +64,7 @@
             formControlName="descripcion_de_actividades"
             aria.describedby="helpId"
             placeholder="Descripcion de las actividades desarrolladas"
+            required
           />
         </div>
         <div
@@ -84,6 +89,7 @@
             class="form-control"
             aria.describedby="helpId"
             placeholder="Fecha de actvidad"
+            required
           />
         </div>
         <div *ngIf="FechaDeActividad?.errors && FechaDeActividad?.touched">
@@ -92,7 +98,13 @@
           </p>
         </div>
         <div class="btn-group" role="group" aria-label="">
-          <button type="submit" class="btn btn-succes" [disabled]="!myForm.valid">Agregar</button>
+          <button
+            type="submit"
+            class="btn btn-succes"
+            [disabled]="!myForm.valid"
+          >
+            Agregar
+          </button>
           <button class="btnn">Cancelar</button>
         </div>
       </form>

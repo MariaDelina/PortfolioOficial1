@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ExperienciaService } from 'src/app/servicios/experiencia.service';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'nueva-experiencia',
@@ -10,11 +11,11 @@ import { ExperienciaService } from 'src/app/servicios/experiencia.service';
 })
 export class NuevaExperienciaComponent {
   formularioExperiencia: FormGroup;
-
+  activatedRoute: any;
   constructor(
     public formularioExp: FormBuilder,
     private experienciaService: ExperienciaService,
-    private ruta: Router
+    private ruta: Router,
   ) {
     this.formularioExperiencia = this.formularioExp.group({
       lugar_de_trabajo: ['', [Validators.required]],

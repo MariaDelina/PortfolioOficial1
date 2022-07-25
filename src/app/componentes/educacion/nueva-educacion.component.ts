@@ -22,8 +22,8 @@ export class NuevaEducacionComponent {
       info_de_instituto: ['', [Validators.required]],
       url_logo_instituto: ['', [Validators.required]],
       nombre_carrera: ['', [Validators.required]],
-      desde_periodo_ano: ['dd/MM/yyyy', [Validators.required]],
-      hasta_periodo_ano: ['dd/MM/yyyy', [Validators.required]],
+      desde_periodo_ano: ['', [Validators.required]],
+      hasta_periodo_ano: ['', [Validators.required]],
     });
   }
   get Certificaciones() {

@@ -1,11 +1,11 @@
 export class Educacion {
   id?: number;
-  certificaciones: string;
-  info_de_instituto: string;
-  url_logo_instituto: string;
-  nombre_carrera: string;
-  desde_periodo_ano: Date;
-  hasta_periodo_ano: Date;
+  certificaciones?: string;
+  info_de_instituto?: string;
+  url_logo_instituto?: string;
+  nombre_carrera?: string;
+  desde_periodo_ano?: Date;
+  hasta_periodo_ano?: Date;
 
   constructor(
     certificaciones: string,

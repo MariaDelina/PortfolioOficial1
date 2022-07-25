@@ -1,31 +1,51 @@
 <main class="main">
   <section class="seccion info">
-    <div *ngIf="isAdmin">
-    <button class="btn btn-primary-outline" routerLink="/nueva-presentacion">
-      Agregar
-    </button>
-  </div>
+    <div>
+      <button class="btn btn-primary-outline" routerLink="/nueva-presentacion">
+        Agregar
+      </button>
+    </div>
     <h2 class="h2">
       {{ presentacion[presentacion.length - 1].nombre_y_apellido }}
     </h2>
     <h3 class="h3">{{ presentacion[presentacion.length - 1].puesto }}</h3>
+    <img
+    height="200px"
+    width="150px"
+    src="assets/Linke.jpg"
+    alt="imagen"
+    class="imgperfil"
+    loading="lazy"
+  />
     <ul class="ul">
       <li class="li">
-        <a href="#" class="a" title="LinkedIn">Visitar mi LinkedIn</a>
+        <a
+          class="a"
+          title="LinkedIn"
+          (click)="goToLinkedin()"
+          routerLink="/{{ presentacion[presentacion.length - 1].linkedin }}"
+          >Visitar mi LinkedIn</a
+        >
       </li>
       <li class="li">
-        <a href="#" class="a" title="GitHub">Visitar mi GitHub</a>
+        <a
+          class="a"
+          title="GitHub"
+          (click)="goToGithub()"
+          routerLink="{{ presentacion[presentacion.length - 1].github }}"
+          >Visitar mi GitHub</a
+        >
       </li>
     </ul>
-    <div *ngIf="isAdmin">
-    <button
-      class="icono-editar"
-      routerLink="/editar-presentacion/{{
-        presentacion[presentacion.length - 1].id
-      }}"
-    >
-      <i class="bi bi-pencil"></i>
-    </button>
-  </div>
+    <div class="div-editar">
+      <button
+        class="icono-editar"
+        routerLink="/editar-presentacion/{{
+          presentacion[presentacion.length - 1].id
+        }}"
+      >
+        <i class="bi bi-pencil"></i>
+      </button>
+    </div>
   </section>
 </main>

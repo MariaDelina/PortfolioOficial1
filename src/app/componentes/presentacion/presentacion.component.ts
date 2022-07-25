@@ -1,9 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
 import { Presentacion } from 'src/app/modelos/presentacion';
 import { PresentacionService } from 'src/app/servicios/presentacion.service';
 import { TokenService } from 'src/app/servicios/token.service';
+import { DOCUMENT } from '@angular/common';
+import { HttpClient } from '@angular/common/http';
+import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { SafePipe } from 'src/app/safe.pipe';
 
 @Component({
   selector: 'app-presentacion',
@@ -13,14 +17,25 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class PresentacionComponent implements OnInit {
   presentacion: Presentacion[] = [];
   roles: string[] = [];
-  isAdmin: boolean = false;
+  github: any;
+  formId: any;
 
   constructor(
     private presentacionService: PresentacionService,
     private toastr: ToastrService,
     private activatedRoute: ActivatedRoute,
-    private tokenService: TokenService
-  ) {}
+    private readonly sanitizer: DomSanitizer
+  ) {
+    // @ts-ignore
+
+    this.presentacion = new Array<Presetacion>(
+      0,
+      'nombre_y_apellido',
+      'puesto',
+      'github',
+      'linkedin'
+    );
+  }
 
   ngOnInit() {
     this.presentacionService.lista().subscribe({
@@ -32,12 +47,6 @@ export class PresentacionComponent implements OnInit {
         console.log(err);
       },
     });
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach( rol => {
-      if(rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }
-    })
   }
   borrar(id: any, presentacion: any) {
     if (window.confirm('¿Desea borrar el registro?')) {
@@ -50,5 +59,11 @@ export class PresentacionComponent implements OnInit {
         },
       });
     }
+  }
+  goToLinkedin(): void {
+    window.location.href = 'https://linkedin.com';
+  }
+  goToGithub(): void {
+    window.location.href = 'https://Github.com';
   }
 }

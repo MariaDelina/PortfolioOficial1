@@ -1,22 +1,21 @@
 .main {
   opacity: 3;
-  margin: 0 0 1em;
+  margin: 0 0 1px 1px;
   text-align: center;
   position: relative;
   z-index: 2;
 }
 .seccion {
   width: 100%;
-  min-height: 80vh;
-  padding: 2em;
-
+  min-height: 50vh;
+  padding: 0.5em;
   display: flex;
   flex-flow: column wrap;
   justify-content: center;
   align-items: center;
   color: rgb(230, 220, 209);
   opacity: 3;
-  margin: 0 0 1em;
+  margin: 0 0 0.5em;
   text-align: center;
   position: relative;
   z-index: 2;
@@ -79,8 +78,9 @@
 }
 .seccion .article {
   width: 100%;
-  min-height: 10vh;
+  height: 100%;
 
+  margin-top: initial;
   display: flex;
   flex-flow: column nowrap;
   justify-content: center;
@@ -88,16 +88,18 @@
 
   position: relative;
   overflow: hidden;
-  border-radius: 1em;
 }
 .seccion .article .h4 {
-  width: 20em;
+  width: 18em;
   height: 20em;
   background-color: var(--negro-5);
   backdrop-filter: blur(1rem);
   position: absolute;
+  border-radius: 20px;
   bottom: 0;
-  left: 0;
+  left: 12px;
+  top: 30px;
+  right: 0;
   color: rgb(230, 220, 209);
 
   display: flex;
@@ -114,7 +116,7 @@
 }
 .main .seccion .article:hover .h4 {
   opacity: 1;
-  transform: translateZ(1) scale(1);
+  transform: translateZ(1) scale(1.5);
 }
 .seccion .p {
   color: rgb(230, 220, 209);
@@ -127,8 +129,13 @@
   align-items: center;
 }
 .seccion .img {
-  width: 20em;
+  width: 18em;
   height: 20em;
+  margin-top: 30px;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .works {
   color: var(--negro);
@@ -144,11 +151,15 @@
   margin: 0 0 2rem;
 }
 .about .p {
+  align-items: right;
+  justify-content: center;
+  text-align: center;
+
   max-width: 40rem;
   color: rgb(230, 220, 209);
   margin: 0 0 2rem;
   font-size: 1.1em;
-  text-align: left;
+  display: flex;
 }
 .about .rrss {
   width: 100%;
@@ -158,7 +169,6 @@
   align-items: center;
 }
 .about .li {
-  /*background: orange;*/
   margin: 0 1em;
   color: rgb(10, 6, 1);
 }
@@ -167,6 +177,7 @@
   height: 3em;
 }
 .form-container-proyectos {
+  text-decoration: none;
   overflow: scroll;
   width: 800px;
   height: 150px;
@@ -174,11 +185,13 @@
   align-content: center;
   border: 0px solid rgb(230, 220, 209);
   padding: 50px 60px;
-  margin-top: 20vh;
+  margin-top: 8vh;
   -webkit-box-shadow: 5px 5px 5px 5px rgb(232, 229, 220);
   -moz-box-shadow: 5px 5px 5px 5px rgb(242, 238, 225);
   box-shadow: 3px 3px 3px 3px rgb(236, 231, 218);
   box-sizing: content-box;
+  position: relative;
+  z-index: 2;
 }
 .btn-primary-outline {
   background-color: transparent;
@@ -197,7 +210,7 @@
   padding: 1.5rem;
   width: 30px;
   height: 30px;
-  margin-left: 80%;
+  margin-right: 80%;
 }
 .icono-editar .bi-pencil {
   color: bisque;
@@ -219,16 +232,51 @@
 }
 .form-container-sobre-mi {
   overflow: scroll;
-  width: 80%;
-  height: 350px;
-  align-items: center;
-  align-content: center;
+  width: 650px;
+  height: 250px;
   border: 0px solid #fff;
   padding: 50px 60px;
-  margin-top: 20vh;
+  margin-top: 8vh;
+  text-align: inherit;
   -webkit-box-shadow: 10px 10px 37px 28px rgb(232, 229, 220);
   -moz-box-shadow: 10px 10px 37px 28px rgb(242, 238, 225);
   box-shadow: 3px 3px 3px 3px rgb(236, 231, 218);
   box-sizing: content-box;
+  position: relative;
+  z-index: 2;
+}
+.loggedOut {
+  border-color: antiquewhite;
+  border-radius: 50px;
+  background-color: transparent;
+  box-sizing: content-box;
+  opacity: 2;
+  color: rgb(244, 233, 233);
+  padding: 1em;
+  z-index: 2;
+  height: 20px;
+  width: 42px;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+}
+.letra {
+  font-size: 15px;
+  color: aliceblue;
+  font-family: var(--tipo-titular);
+}
+.imgperfil{
+  border-radius:20px;
+}
+.loggedOut-nav{
+  list-style: none;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-top: 20px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
 }
 

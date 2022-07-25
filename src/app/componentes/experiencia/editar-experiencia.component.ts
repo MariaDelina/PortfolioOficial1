@@ -13,6 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class EditarExperienciaComponent {
   formularioExperiencia: FormGroup;
   formId: any;
+  editarForm: Experiencia[] = [];
 
   constructor(
     private experienciaService: ExperienciaService,
@@ -58,7 +59,7 @@ export class EditarExperienciaComponent {
   get FechaDeActividad() {
     return this.formularioExperiencia.get('fecha_de_actividad');
   }
-  cambiarExperiencia(): any {
+  cambiarExperiencia(): void {
     this.experienciaService
       .update(this.formId, this.formularioExperiencia.value)
       .subscribe(() => {

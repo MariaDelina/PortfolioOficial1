@@ -18,6 +18,7 @@
               formControlName="nombre_y_apellido"
               aria.describedby="helpId"
               placeholder="Nombre y apellido"
+              required
             />
           </div>
           <div *ngIf="NombreYApellido?.errors && NombreYApellido?.touched">
@@ -37,6 +38,7 @@
               formControlName="puesto"
               aria.describedby="helpId"
               placeholder="Puesto en el que trabaja"
+              required
             />
           </div>
           <div *ngIf="Puesto?.errors && Puesto?.touched">
@@ -44,8 +46,38 @@
               El campo es requerido
             </p>
           </div>
+          <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <h6>GitHub</h6>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="github"
+              aria.describedby="helpId"
+              placeholder="GitHub"
+              required
+            />
+          </div>
+          <div class="mb-3">
+            <label for="" class="form-label"></label>
+            <h6>LinkedIn</h6>
+            <input
+              type="text"
+              class="form-control"
+              formControlName="linkedin"
+              aria.describedby="helpId"
+              placeholder="LinkedIn"
+              required
+            />
+          </div>
           <div class="btn-group" role="group" aria-label="">
-            <button type="submit" class="btn btn-succes" [disabled]="!myForm.valid">Agregar</button>
+            <button
+              type="submit"
+              class="btn btn-succes"
+              [disabled]="!myForm.valid"
+            >
+              Agregar
+            </button>
             <button class="btnn">Cancelar</button>
           </div>
         </form>

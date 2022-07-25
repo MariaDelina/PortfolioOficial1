@@ -18,6 +18,7 @@
               formControlName="url_primer_proyecto_principal"
               aria.describedby="helpId"
               placeholder="url del primer proyecto principal"
+              required
             />
           </div>
           <div
@@ -42,6 +43,7 @@
               formControlName="url_segundo_proyecto_principal"
               aria.describedby="helpId"
               placeholder="url del segundo proyecto principal"
+              required
             />
           </div>
           <div
@@ -58,7 +60,9 @@
             </p>
           </div>
           <div class="btn-group" role="group" aria-label="">
-            <button type="submit" class="btn" [disabled]="!myForm.valid">Agregar</button>
+            <button type="submit" class="btn" [disabled]="!myForm.valid">
+              Agregar
+            </button>
             <button class="btnn">Cancelar</button>
           </div>
         </form>

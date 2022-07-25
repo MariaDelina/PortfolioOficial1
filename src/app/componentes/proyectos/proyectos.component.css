@@ -1,0 +1,17 @@
+.div-editar {
+  margin-left: 100%;
+}
+ .h5-link {
+    color: rgb(230, 220, 209);
+    text-decoration:none;
+    background-color: var(--negro-5);
+  }
+.main .h5-link
+{
+  color: rgb(230, 220, 209);
+    text-decoration:none;
+    background-color: var(--negro-5);
+    border: none;
+    text-decoration-color: initial;
+   text-decoration-line: underline;
+}

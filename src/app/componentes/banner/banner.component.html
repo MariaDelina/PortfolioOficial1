@@ -1,21 +1,21 @@
 <section class="seccion about" id="about">
   <h2 class="h2">Sobre mi</h2>
-  <div *ngIf="isAdmin">
-  <button class="btn btn-primary-outline" routerLink="/nuevo-banner">
-    Agregar
-  </button>
-</div>
+  <div>
+    <button class="btn btn-primary-outline" routerLink="/nuevo-banner">
+      Agregar
+    </button>
+  </div>
   <form class="form-container-sobre-mi">
     <p class="p">{{ banner[banner.length - 1].primera_descripcion }}</p>
     <p class="p">{{ banner[banner.length - 1].segunda_descripcion }}</p>
     <p class="p">{{ banner[banner.length - 1].tercera_descripcion }}</p>
   </form>
-  <div *ngIf="isAdmin">
-  <button
-    class="icono-editar"
-    routerLink="/editar-banner/{{banner[banner.length - 1].id}}"
-  >
-    <i class="bi bi-pencil"></i>
-  </button>
-</div>
+  <div class="div-editar">
+    <button
+      class="icono-editar"
+      routerLink="/editar-banner/{{ banner[banner.length - 1].id }}"
+    >
+      <i class="bi bi-pencil"></i>
+    </button>
+  </div>
 </section>

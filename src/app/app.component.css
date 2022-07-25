@@ -6,12 +6,12 @@
 .cursor {
   width: 5em;
   height: 5em;
-  background-color: rgb(150, 130, 44);
+  background-color: rgb(235, 231, 216);
   position: fixed;
   top: 0;
   left: 0;
   z-index: 3;
   pointer-events: none;
   border-radius: 50%;
-  mix-blend-mode: screen ;
+  mix-blend-mode: difference;
 }

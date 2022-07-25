@@ -5,46 +5,47 @@ const USERNAME_KEY = 'AuthUserName';
 const AUTHORITIES_KEY = 'AuthAuthorities';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class TokenService {
-  roles: Array<string>=[];
+  roles: Array<string> = [];
 
-  public setToken(token: any):void {
+  public setToken(token: any): void {
     window.sessionStorage.removeItem(TOKEN_KEY);
     window.sessionStorage.setItem(TOKEN_KEY, token);
   }
 
-  public getToken():any {
+  public getToken(): any {
     return sessionStorage.getItem(TOKEN_KEY);
   }
 
-  public setUserName(userName: any):void {
+  public setUserName(userName: any): void {
     window.sessionStorage.removeItem(USERNAME_KEY);
     window.sessionStorage.setItem(USERNAME_KEY, userName);
   }
 
-  public getUserName():any {
+  public getUserName(): any {
     return sessionStorage.getItem(USERNAME_KEY);
   }
 
-  public setAuthorities(authorities: any):void {
+  public setAuthorities(authorities: any): void {
     window.sessionStorage.removeItem(AUTHORITIES_KEY);
     window.sessionStorage.setItem(AUTHORITIES_KEY, JSON.stringify(authorities));
   }
 
-  public getAuthorities():string[] {
+  public getAuthorities(): string[] {
     this.roles = [];
-    if(sessionStorage.getItem(AUTHORITIES_KEY)) {
-      JSON.parse(sessionStorage.getItem(AUTHORITIES_KEY)|| '{}').forEach((authority:any) => {
-        this.roles.push(authority.authority);
-      });
+    if (sessionStorage.getItem(AUTHORITIES_KEY)) {
+      JSON.parse(sessionStorage.getItem(AUTHORITIES_KEY) || '{}').forEach(
+        (authority: any) => {
+          this.roles.push(authority.authority);
+        }
+      );
     }
     return this.roles;
   }
 
-  public logOut():void {
+  public logOut(): void {
     window.sessionStorage.clear();
+  }
 }
-}
-

@@ -1,64 +1,62 @@
 <div class="main">
   <section class="seccion" id="works">
     <h2 class="h2">Proyectos Principales</h2>
-    <div *ngIf="isAdmin">
-    <button
-      class="btn btn-primary-outline"
-      routerLink="/nuevos-principales-proyectos"
-    >
-      Agregar
-    </button>
-  </div>
+    <div>
+      <button
+        class="btn btn-primary-outline"
+        routerLink="/nuevos-principales-proyectos"
+      >
+        Agregar
+      </button>
+    </div>
     <p class="p">
       Les presento los principales proyectos en los que he trabajado:
     </p>
     <div class="grid">
       <article class="article">
-        <a class="a" href="#" title="primera-Url">
-          <figure class="figure">
+        <a href="#" title="primera-Url">
+          <figure>
             <img
-              src="assets/compuroja.jpg"
+              src="assets/compuyplanta.jpg"
               alt="imagen"
               class="img"
               loading="lazy"
             />
           </figure>
-          <h4 class="h4">
-            {{
+          <a class="e2e-trusted-url" [href]="prinProyectos[prinProyectos.length - 1]
+            .url_primer_proyecto_principal"><h4 class="h4">{{
               prinProyectos[prinProyectos.length - 1]
                 .url_primer_proyecto_principal
-            }}
-          </h4>
+            }}</h4></a>
         </a>
       </article>
       <article class="article">
-        <a class="a" href="#" title="segunda-Url">
-          <figure class="figure">
+        <a href="#" title="segunda-Url">
+          <figure>
             <img
-              src="assets/compulila.jpg"
+              src="assets/IAveige.jpg"
               alt="imagen"
               class="img"
               loading="lazy"
             />
           </figure>
-          <h4 class="h4">
-            {{
+            <a class="e2e-trusted-url" [href]="prinProyectos[prinProyectos.length - 1]
+            .url_primer_proyecto_principal"><h4 class="h4">{{
               prinProyectos[prinProyectos.length - 1]
-                .url_segundo_proyecto_principal
-            }}
-          </h4>
+                .url_primer_proyecto_principal
+            }}</h4></a>
         </a>
       </article>
     </div>
-    <div *ngIf="isAdmin">
-    <button
-      class="icono-editar"
-      routerLink="/editar-principales-proyectos/{{
-        prinProyectos[prinProyectos.length - 1]?.id
-      }}"
-    >
-      <i class="bi bi-pencil"></i>
-    </button>
-  </div>
+    <div class="div-editar">
+      <button
+        class="icono-editar"
+        routerLink="/editar-principales-proyectos/{{
+          prinProyectos[prinProyectos.length - 1].id
+        }}"
+      >
+        <i class="bi bi-pencil"></i>
+      </button>
+    </div>
   </section>
 </div>

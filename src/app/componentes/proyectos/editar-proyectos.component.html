@@ -11,6 +11,7 @@
             class="form-control"
             aria.describedby="helpId"
             placeholder="nombre de proyecto"
+            required
           />
         </div>
         <div *ngIf="NombreDeProyecto?.errors && NombreDeProyecto?.touched">
@@ -27,6 +28,7 @@
             class="form-control"
             aria.describedby="helpId"
             placeholder="descripcion del proyecto"
+            required
           />
         </div>
         <div
@@ -50,6 +52,7 @@
             class="form-control"
             aria.describedby="helpId"
             placeholder="Link de evidencia"
+            required
           />
         </div>
         <div *ngIf="LinkDeEvidencia?.errors && LinkDeEvidencia?.touched">
@@ -66,6 +69,7 @@
             class="form-control"
             aria.describedby="helpId"
             placeholder="fecha de realizacion"
+            required
           />
         </div>
         <div *ngIf="FechaDeRealizacion?.errors && FechaDeRealizacion?.touched">

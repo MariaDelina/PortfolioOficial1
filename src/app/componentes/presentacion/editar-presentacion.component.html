@@ -14,6 +14,7 @@
             class="form-control"
             aria.describedby="helpId"
             placeholder="Nombre y apellido"
+            required
           />
         </div>
         <div *ngIf="NombreYApellido?.errors && NombreYApellido?.touched">
@@ -30,12 +31,37 @@
             class="form-control"
             aria.describedby="helpId"
             placeholder="Puesto en el que se desempeña"
+            required
           />
         </div>
         <div *ngIf="Puesto?.errors && Puesto?.touched">
           <p *ngIf="Puesto?.hasError('required')" class="text-danger">
             El campo es requerido
           </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <h6>GitHub</h6>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="github"
+            aria.describedby="helpId"
+            placeholder="GitHub"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <h6>LinkedIn</h6>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="linkedin"
+            aria.describedby="helpId"
+            placeholder="LinkedIn"
+            required
+          />
         </div>
         <div class="btn-group" role="group" aria-label="">
           <button type="submit" class="btn btn-succes">Editar</button>

@@ -1,7 +1,14 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
-      <form #myForm="ngForm" novalidate class="form-input" [formGroup]="formularioEducacion" (ngSubmit)="editarEducacion()" novalidate class="form-input">
+      <form
+        #myForm="ngForm"
+        novalidate
+        class="form-input"
+        [formGroup]="formularioEducacion"
+        (ngSubmit)="editarEducacion()"
+        class="form-input"
+      >
         <div class="mb-3">
           <h6>Certificacion de tu educacion</h6>
           <label for="" class="form-label"></label>
@@ -14,11 +21,6 @@
             required
           />
         </div>
-        <div *ngIf="Certificaciones?.errors && Certificaciones?.touched">
-          <p *ngIf="Certificaciones?.hasError('required')" class="text-danger">
-            El campo es requerido
-          </p>
-        </div>
         <div class="mb-3">
           <h6>Infomacion de tu instituto</h6>
           <label for="" class="form-label"></label>
@@ -28,12 +30,8 @@
             formControlName="info_de_instituto"
             aria.describedby="helpId"
             placeholder="Infomacion de tu instituto"
+            required
           />
-        </div>
-        <div *ngIf="InfoDeInstituto?.errors && InfoDeInstituto?.touched">
-          <p *ngIf="InfoDeInstituto?.hasError('required')" class="text-danger">
-            El campo es requerido
-          </p>
         </div>
         <div class="mb-3">
           <h6>Url del logo del instituto</h6>
@@ -44,12 +42,8 @@
             formControlName="url_logo_instituto"
             aria.describedby="helpId"
             placeholder="Url del logo del instituto"
+            required
           />
-        </div>
-        <div *ngIf="UrlLogoInstituto?.errors && UrlLogoInstituto?.touched">
-          <p *ngIf="UrlLogoInstituto?.hasError('required')" class="text-danger">
-            El campo es requerido
-          </p>
         </div>
         <div class="mb-3">
           <h6>Nombre de tu carrera</h6>
@@ -60,28 +54,20 @@
             formControlName="nombre_carrera"
             aria.describedby="helpId"
             placeholder="Nombre de tu carrera"
+            required
           />
-        </div>
-        <div *ngIf="NombreCarrera?.errors && NombreCarrera?.touched && !NombreCarrera?.pristine">
-          <p *ngIf="NombreCarrera?.hasError('required')" class="text-danger">
-            El campo es requerido
-          </p>
         </div>
         <div class="mb-3">
           <h6>Fecha de inicio de tus estudios</h6>
           <label for="" class="form-label"></label>
           <input
             type="date"
-            class="form-control"
             formControlName="desde_periodo_ano"
+            class="form-control"
             aria.describedby="helpId"
             placeholder="Fecha de inicio de tus estudios"
+            required
           />
-        </div>
-        <div *ngIf="DesdePeriodoAno?.errors && DesdePeriodoAno?.touched">
-          <p *ngIf="DesdePeriodoAno?.hasError('required')" class="text-danger">
-            El campo es requerido
-          </p>
         </div>
         <div class="mb-3">
           <h6>Fecha de finalización de tus estudios</h6>
@@ -92,15 +78,17 @@
             formControlName="hasta_periodo_ano"
             aria.describedby="helpId"
             placeholder="Fecha de finalización de tus estudios"
+            required
           />
         </div>
-        <div *ngIf="HastaPeriodoAno?.errors && HastaPeriodoAno?.touched">
-          <p *ngIf="HastaPeriodoAno?.hasError('required')" class="text-danger">
-            El campo es requerido
-          </p>
-        </div>
         <div class="btn-group" role="group" aria-label="">
-          <button type="submit" class="btn btn-succes" [disabled]="!myForm.valid">Editar</button>
+          <button
+            type="submit"
+            class="btn btn-succes"
+            [disabled]="!myForm.valid"
+          >
+            Editar
+          </button>
           <button class="btnn">Cancelar</button>
         </div>
       </form>

@@ -30,8 +30,13 @@ import { EducacionComponent } from './componentes/educacion/educacion.component'
 import { EditarEducacionComponent } from './componentes/educacion/editar-educacion.component';
 import { NuevaEducacionComponent } from './componentes/educacion/nueva-educacion.component';
 import { LoginComponent } from './componentes/login/login.component';
-import { interceptorProvider, ProdInterceptorService } from './interceptors/prod-interceptor.service';
-
+import {
+  interceptorProvider,
+  ProdInterceptorService,
+} from './interceptors/prod-interceptor.service';
+import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
+import { SafePipe } from './safe.pipe';
+import { ByPassSecurityPipe } from './by-pass-security-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -58,7 +63,10 @@ import { interceptorProvider, ProdInterceptorService } from './interceptors/prod
     EditarEducacionComponent,
     NuevaEducacionComponent,
     BannerComponent,
-    LoginComponent
+    LoginComponent,
+    HabilidadesComponent,
+    [SafePipe],
+    [ByPassSecurityPipe]
   ],
   imports: [
     BrowserModule,
@@ -69,11 +77,9 @@ import { interceptorProvider, ProdInterceptorService } from './interceptors/prod
     CommonModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    RouterModule 
+    RouterModule,
   ],
-  providers: [
-    interceptorProvider
-  ],
+  providers: [interceptorProvider],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

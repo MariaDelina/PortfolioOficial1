@@ -13,14 +13,23 @@ import { TokenService } from 'src/app/servicios/token.service';
 export class EducacionComponent implements OnInit {
   educaciones: Educacion[] = [];
   roles: string[] = [];
-  isAdmin: boolean = false;
 
   constructor(
     private educacionService: EducacionService,
     private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute,
-    private tokenService: TokenService
-  ) {}
+    private activatedRoute: ActivatedRoute
+  ) {
+    // @ts-ignore
+    this.proyectos = new Array<Proyectos>(
+      0,
+      'certificaciones',
+      'info_de_instituto',
+      'url_logo_instituto',
+      'nombre_carrera',
+      'desde_periodo_ano',
+      'hasta_periodo_ano'
+    );
+  }
 
   ngOnInit() {
     this.educacionService.lista().subscribe({
@@ -32,12 +41,6 @@ export class EducacionComponent implements OnInit {
         console.log(err);
       },
     });
-    this.roles = this.tokenService.getAuthorities();
-    this.roles.forEach( rol => {
-      if(rol === 'ROLE_ADMIN') {
-        this.isAdmin = true;
-      }
-    })
   }
   borrar(id: any, educaciones: any) {
     if (window.confirm('¿Desea borrar el registro?')) {

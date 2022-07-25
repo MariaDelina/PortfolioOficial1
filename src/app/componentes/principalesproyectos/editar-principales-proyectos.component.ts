@@ -49,7 +49,7 @@ export class EditarPrincipalesProyectosComponent {
       'url_segundo_proyecto_principal'
     );
   }
-  enviarUrl(): any {
+  enviarUrl(): void {
     this.principalesProyectosService
       .update(this.formId, this.formularioPrincipalesProyectos.value)
       .subscribe(() => {

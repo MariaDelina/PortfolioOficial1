@@ -1,4 +1,7 @@
-.button-icon{
+.button-icon {
   display: flex;
   float: right;
+}
+.div-editar {
+  margin-left: 80%;
 }

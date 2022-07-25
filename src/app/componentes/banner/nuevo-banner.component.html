@@ -1,7 +1,13 @@
 <div class="container">
   <div class="row mt-5">
     <div class="col-md-4 mx-auto">
-      <form #myForm="ngForm" novalidate class="form-input" [formGroup]="formularioBanner" (ngSubmit)="enviarBanner()">
+      <form
+        #myForm="ngForm"
+        novalidate
+        class="form-input"
+        [formGroup]="formularioBanner"
+        (ngSubmit)="enviarBanner()"
+      >
         <div class="mb-3">
           <h6>Descripcion de sus potencialidades</h6>
           <label for="" class="form-label"></label>
@@ -11,6 +17,7 @@
             formControlName="primera_descripcion"
             aria.describedby="helpId"
             placeholder="Descripcion de sus potencialidades"
+            required
           />
         </div>
         <div *ngIf="PrimeraDescripcion?.errors && PrimeraDescripcion?.touched">
@@ -30,6 +37,7 @@
             formControlName="segunda_descripcion"
             aria.describedby="helpId"
             placeholder="Descripcion de sus potencialidades"
+            required
           />
         </div>
         <div *ngIf="SegundaDescripcion?.errors && SegundaDescripcion?.touched">
@@ -49,6 +57,7 @@
             formControlName="tercera_descripcion"
             aria.describedby="helpId"
             placeholder="Descripcion de sus potencialidades"
+            required
           />
         </div>
         <div *ngIf="TerceraDescripcion?.errors && TerceraDescripcion?.touched">
@@ -60,8 +69,13 @@
           </p>
         </div>
         <div class="btn-group" role="group" aria-label="">
-          <button type="submit" class="btn btn-succes" [disabled]="!myForm.valid"
-          >Agregar</button>
+          <button
+            type="submit"
+            class="btn btn-succes"
+            [disabled]="!myForm.valid"
+          >
+            Agregar
+          </button>
           <button class="btnn">Cancelar</button>
         </div>
       </form>

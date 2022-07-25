@@ -28,11 +28,15 @@ export class EditarPresentacionComponent {
       this.formularioPresentacion.setValue({
         nombre_y_apellido: respuesta['nombre_y_apellido'],
         puesto: respuesta['puesto'],
+        github: ['github'],
+        linkedin: ['linkedin'],
       });
     });
     this.formularioPresentacion = this.formulario.group({
       nombre_y_apellido: ['', [Validators.required]],
       puesto: ['', [Validators.required]],
+      github: [''],
+      linkedin: [''],
     });
   }
   get NombreYApellido() {
@@ -40,6 +44,12 @@ export class EditarPresentacionComponent {
   }
   get Puesto() {
     return this.formularioPresentacion.get('puesto');
+  }
+  get Github() {
+    return this.formularioPresentacion.get('github');
+  }
+  get Linkedin() {
+    return this.formularioPresentacion.get('linkedin');
   }
   enviarPresentacion(): any {
     this.presentacionService

@@ -1,0 +1,20 @@
+.progress{
+  background-color: transparent;
+  width: 60%;
+  height: 20px;
+  float: inherit;
+  border-radius: 20px;
+  margin-bottom: 10px;
+
+}
+.seccion .habilidades{
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+  font-family: var(--tipo-titular);
+  font-weight: 600;
+  font-size: 3.2em;
+  line-height: 1em;
+  color: rgb(230, 220, 209);
+  mix-blend-mode: exclusion;
+}

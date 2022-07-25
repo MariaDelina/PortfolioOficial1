@@ -1,15 +1,13 @@
-
 .btn-primary-outline {
   background-color: transparent;
-  border-color:rgb(230, 220, 209);
+  border-color: rgb(230, 220, 209);
   border-radius: 50%;
-  box-shadow:rgb(230, 220, 209);
+  box-shadow: rgb(230, 220, 209);
   width: 80px;
   height: 40px;
 }
-.btnn{
-  background-color: rgb(127, 90, 34);
+.btnn {
+  background-color: rgb(207, 27, 27);
   border-color: rgb(185, 191, 141);
   border-radius: 8%;
 }
-

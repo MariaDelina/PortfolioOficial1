@@ -2,7 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { EducacionService } from '../../servicios/educacion.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {
+  FormBuilder,
+  FormGroup,
+  Validators,
+  FormsModule,
+} from '@angular/forms';
 import { Educacion } from 'src/app/modelos/educacion';
 
 @Component({
@@ -13,6 +18,8 @@ import { Educacion } from 'src/app/modelos/educacion';
 export class EditarEducacionComponent {
   formularioEducacion: FormGroup;
   formId: any;
+  // @ts-ignore
+  selectCampo: Educacion = new Educacion();
 
   constructor(
     private educacionService: EducacionService,
@@ -61,12 +68,30 @@ export class EditarEducacionComponent {
   get HastaPeriodoAno() {
     return this.formularioEducacion.get('hasta_periodo_ano');
   }
-  editarEducacion(): any {
+  editarEducacion(): void {
     this.educacionService
       .update(this.formId, this.formularioEducacion.value)
-      .subscribe(() => {
-        this.router.navigateByUrl('/lista');
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          //(this.formId === res.id);
+          this.router.navigateByUrl('/lista');
+        },
+        error: (err) => {
+          console.log(err);
+        },
       });
   }
 }
 
+// addorEdit(){
+// this.selectCampo = this.formularioEducacion.length + 1;
+//this.formularioEducacion.value.push(this.selectCampo);
+// @ts-ignore
+//this.selectCampo = new Educacion();
+// }
+
+//(this.InfoDeInstituto, this.Certificaciones,this.InfoDeInstituto, this.UrlLogoInstituto, this.NombreCarrera ,this.DesdePeriodoAno, this.HastaPeriodoAno
+
+//[(ngModel)]="selectCampo.certificaciones"
+//
