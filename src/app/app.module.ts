@@ -36,7 +36,8 @@ import {
 } from './interceptors/prod-interceptor.service';
 import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
 import { SafePipe } from './safe.pipe';
-import { ByPassSecurityPipe } from './by-pass-security-pipe.pipe';
+import { NuevaHabilidadComponent } from './componentes/habilidades/nueva-habilidad.component';
+import { EditarHabilidadComponent } from './componentes/habilidades/editar-habilidades.component';
 
 @NgModule({
   declarations: [
@@ -64,9 +65,10 @@ import { ByPassSecurityPipe } from './by-pass-security-pipe.pipe';
     NuevaEducacionComponent,
     BannerComponent,
     LoginComponent,
-    HabilidadesComponent,
     [SafePipe],
-    [ByPassSecurityPipe]
+    HabilidadesComponent,
+    NuevaHabilidadComponent,
+    EditarHabilidadComponent,
   ],
   imports: [
     BrowserModule,

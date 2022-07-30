@@ -1,5 +1,5 @@
 {
   "projects": {
-    "default": "app-portfoliooficial"
+    "default": "./dist/portfolio-oficial"
   }
 }

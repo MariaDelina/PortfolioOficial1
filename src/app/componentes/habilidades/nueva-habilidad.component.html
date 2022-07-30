@@ -1,0 +1,102 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+      <form
+        [formGroup]="formularioHabilidades"
+        (ngSubmit)="enviarHabilidad()"
+        class="form-input"
+        #myForm="ngForm"
+        novalidate
+      >
+        <div class="mb-3">
+          <label for="" class="form-label"
+            >Selecciona tus habilidades en JavaScript</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            formControlName="porcentaje_js"
+            aria.describedby="helpId"
+            placeholder="Habilidades en JavaScript"
+            required
+          />
+        </div>
+        <div *ngIf="PorcentajeJs?.errors && PorcentajeJs?.touched">
+          <p *ngIf="PorcentajeJs?.hasError('required')" class="text-danger">
+            El campo es requerido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"
+            >Selecciona tus habilidades en Java</label
+          >
+          <input
+            type="number"
+            class="form-control"
+            formControlName="porcentaje_java"
+            aria.describedby="helpId"
+            placeholder="Habilidades en Java"
+            required
+          />
+        </div>
+        <div *ngIf="PorcentajeJava?.errors && PorcentajeJava?.touched">
+          <p *ngIf="PorcentajeJava?.hasError('required')" class="text-danger">
+            El campo es requerido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"
+            >Selecciona tus habilidades en Angular</label
+          >
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"></label>
+          <input
+            type="number"
+            class="form-control"
+            formControlName="porcentaje_angular"
+            aria.describedby="helpId"
+            placeholder="Habilidades en Angular"
+            required
+          />
+        </div>
+        <div *ngIf="PorcentajeAngular?.errors && PorcentajeAngular?.touched">
+          <p
+            *ngIf="PorcentajeAngular?.hasError('required')"
+            class="text-danger"
+          >
+            El campo es requerido
+          </p>
+        </div>
+        <div class="mb-3">
+          <label for="" class="form-label"
+            >Selecciona tus habilidades en MySQL</label
+          >
+          <input
+            formControlName="porcentaje_mysql"
+            type="number"
+            class="form-control"
+            aria.describedby="helpId"
+            placeholder="Habilidades en MySQL"
+            required
+          />
+        </div>
+        <div *ngIf="PorcentajeMysql?.errors && PorcentajeMysql?.touched">
+          <p *ngIf="PorcentajeMysql?.hasError('required')" class="text-danger">
+            El campo es requerido
+          </p>
+        </div>
+        <div class="btn-group" role="group" aria-label="">
+          <button
+            type="submit"
+            class="btn btn-succes"
+            [disabled]="!myForm.valid"
+          >
+            Agregar
+          </button>
+          <button class="btnn">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

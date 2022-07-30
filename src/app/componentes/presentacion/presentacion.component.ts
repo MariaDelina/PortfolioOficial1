@@ -1,14 +1,6 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { ToastrService } from 'ngx-toastr';
-import { ActivatedRoute } from '@angular/router';
 import { Presentacion } from 'src/app/modelos/presentacion';
 import { PresentacionService } from 'src/app/servicios/presentacion.service';
-import { TokenService } from 'src/app/servicios/token.service';
-import { DOCUMENT } from '@angular/common';
-import { HttpClient } from '@angular/common/http';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
-import { SafePipe } from 'src/app/safe.pipe';
-
 @Component({
   selector: 'app-presentacion',
   templateUrl: './presentacion.component.html',
@@ -19,22 +11,14 @@ export class PresentacionComponent implements OnInit {
   roles: string[] = [];
   github: any;
   formId: any;
+  photoSelected: any;
+  file:any;
 
   constructor(
-    private presentacionService: PresentacionService,
-    private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute,
-    private readonly sanitizer: DomSanitizer
+    private presentacionService: PresentacionService
   ) {
     // @ts-ignore
-
-    this.presentacion = new Array<Presetacion>(
-      0,
-      'nombre_y_apellido',
-      'puesto',
-      'github',
-      'linkedin'
-    );
+    this.presentacion = new Array<Presetacion>(0, 'nombre_y_apellido', 'puesto', 'github', 'linkedin');
   }
 
   ngOnInit() {
@@ -65,5 +49,15 @@ export class PresentacionComponent implements OnInit {
   }
   goToGithub(): void {
     window.location.href = 'https://Github.com';
+  }
+  mostrarImg(event:any):void {
+    if(event.target.files && event.target.files[0]){
+      this.file = <any>event.target.files[0];
+      //img preview
+      const reader = new FileReader();
+      reader.onload = e => this.photoSelected = reader.result;
+      reader.readAsDataURL(this.file)
+    }
+
   }
 }

@@ -8,7 +8,7 @@ import { JwtDTO } from 'src/app/modelos/JwtDTO';
   providedIn: 'root',
 })
 export class AuthService {
-  authURL = 'https://app-portfoliov3.herokuapp.com/auth/';
+  authURL = 'https://app-portfoliov5.herokuapp.com/auth/';
 
   constructor(private http: HttpClient) {}
 

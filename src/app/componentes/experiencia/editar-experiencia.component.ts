@@ -13,7 +13,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class EditarExperienciaComponent {
   formularioExperiencia: FormGroup;
   formId: any;
-  editarForm: Experiencia[] = [];
+  experiencias: Experiencia[] = [];
 
   constructor(
     private experienciaService: ExperienciaService,
@@ -22,6 +22,8 @@ export class EditarExperienciaComponent {
     private router: Router,
     private formulario: FormBuilder
   ) {
+    // @ts-ignore
+    this.experiencia = new Array<Experiencia>(0, "lugar_de_trabajo", "titulo_del_puesto", "url_logo_empresa", "descripcion_de_actividades","fecha_de_actividad");
     this.formId = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(this.formId);
     this.experienciaService.detail(this.formId).subscribe({

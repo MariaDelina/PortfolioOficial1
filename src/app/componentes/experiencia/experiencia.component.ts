@@ -13,52 +13,15 @@ import { SafePipe } from 'src/app/safe.pipe';
   styleUrls: ['./experiencia.component.css'],
 })
 export class ExperienciaComponent implements OnInit {
-  itsSafe: SafeHtml | undefined;
   experiencias: Experiencia[];
-  roles: string[] = [];
-  formUrl:any;
-  formularioExperiencia: FormGroup;
-  file: any;
-  private safePipe = new SafePipe(this.domSanitizer);
-  img: any;
-  canvas: any;
-  uploadService: any;
-  asset: any;
   constructor(
     private experienciaService: ExperienciaService,
-    private toastr: ToastrService,
     private activatedRoute: ActivatedRoute,
-    public  domSanitizer: DomSanitizer,
-    private formularioExp: FormBuilder,
-
   ) {
     // @ts-ignore
     this.experiencias = new Array<Experiencia>(0, "lugar_de_trabajo", "titulo_del_puesto", "url_logo_empresa", "descripcion_de_actividades","fecha_de_actividad");
-    this.formularioExperiencia = this.formularioExp.group({
-      lugar_de_trabajo: ['', [Validators.required]],
-      titulo_del_puesto: ['', [Validators.required]],
-      url_logo_empresa: ['', [Validators.required]],
-      descripcion_de_actividades: ['', [Validators.required]],
-      fecha_de_actividad: ['', [Validators.required]],
-    });
-  }
-  get LugarDeTrabajo() {
-    return this.formularioExperiencia.get('lugar_de_trabajo');
-  }
-  get TituloDelPuesto() {
-    return this.formularioExperiencia.get('titulo_del_puesto');
-  }
-  get UrlLogoEmpresa() {
-    return this.formularioExperiencia.get('url_logo_empresa');
-  }
-  get DescripcionDeActividades() {
-    return this.formularioExperiencia.get('descripcion_de_actividades');
-  }
-  get FechaDeActividad() {
-    return this.formularioExperiencia.get('fecha_de_actividad');
   }
   ngOnInit() {
-    this.itsSafe = this.safePipe.transform('<h1>Hi</h1>', 'html');
     this.experienciaService.lista().subscribe({
       next: (data) => {
         console.log(data);
@@ -80,9 +43,6 @@ export class ExperienciaComponent implements OnInit {
         },
       });
     }
-  }
-  public getSantizeUrl(url : any) {
-    return this.domSanitizer.bypassSecurityTrustResourceUrl(url);
   }
 }
 

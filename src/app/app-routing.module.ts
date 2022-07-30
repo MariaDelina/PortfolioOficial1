@@ -27,6 +27,9 @@ import { NuevaPresentacionComponent } from './componentes/presentacion/nueva-pre
 import { LoginComponent } from './componentes/login/login.component';
 import { ProdGuardService as guard } from './guards/prod-guard.service';
 import { PrincipalesProyectos } from './modelos/principales-proyectos';
+import { HabilidadesComponent } from './componentes/habilidades/habilidades.component';
+import { NuevaHabilidadComponent } from './componentes/habilidades/nueva-habilidad.component';
+import { EditarHabilidadComponent } from './componentes/habilidades/editar-habilidades.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -146,6 +149,24 @@ const routes: Routes = [
   {
     path: 'nueva-educacion',
     component: NuevaEducacionComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'habilidades/:id',
+    component: HabilidadesComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'nueva-habilidad',
+    component: NuevaHabilidadComponent,
+    canActivate: [guard],
+    data: { expectedRol: ['admin'] },
+  },
+  {
+    path: 'editar-habilidad/:id',
+    component: EditarHabilidadComponent,
     canActivate: [guard],
     data: { expectedRol: ['admin'] },
   },

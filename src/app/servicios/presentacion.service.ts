@@ -6,7 +6,7 @@ import { Presentacion } from '../modelos/presentacion';
   providedIn: 'root',
 })
 export class PresentacionService {
-  presentacionUrl = 'https://app-portfoliov3.herokuapp.com/api/presentacion/';
+  presentacionUrl = 'https://app-portfoliov5.herokuapp.com/api/presentacion/';
 
   constructor(private http: HttpClient) {}
   public detail(id: number): Observable<Presentacion> {

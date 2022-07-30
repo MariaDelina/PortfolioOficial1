@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ProyectosService } from 'src/app/servicios/proyectos.service';
-import { Proyectos } from 'src/app/modelos/proyectos';
 
 @Component({
   selector: 'nuevos-proyectos',

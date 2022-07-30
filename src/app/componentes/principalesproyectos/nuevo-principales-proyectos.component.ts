@@ -16,6 +16,8 @@ export class NuevosPrincipalesProyectosComponent {
     private principalesProyectosService: PrincipalesproyectosService,
     private ruta: Router
   ) {
+    // @ts-ignore
+    this.prinProyectos = new Array<PrincipalesProyectos>(0, "url_primer_proyecto_principal", "url_segundo_proyecto_principal");
     this.formularioPrincipalesProyectos = this.formularioPrinProyect.group({
       url_primer_proyecto_principal: ['', [Validators.required]],
       url_segundo_proyecto_principal: ['', [Validators.required]],

@@ -1,9 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PrincipalesProyectos } from '../../modelos/principales-proyectos';
 import { PrincipalesproyectosService } from 'src/app/servicios/principalesproyectos.service';
-import { ToastrService } from 'ngx-toastr';
-import { ActivatedRoute, Params } from '@angular/router';
-import { TokenService } from 'src/app/servicios/token.service';
+
 
 @Component({
   selector: 'app-principales-proyectos',
@@ -18,11 +16,9 @@ export class PrincipalesProyectosComponent implements OnInit {
 
   constructor(
     private principalesproyectosService: PrincipalesproyectosService,
-    private toastr: ToastrService,
-    private activatedRoute: ActivatedRoute,
   ) {
     // @ts-ignore
-    this.prinProyectos = new Array<PrincipalesProyectos>(0, "proyecto1", "proyecto2");
+    this.prinProyectos = new Array<PrincipalesProyectos>(0, "url_primer_proyecto_principal", "url_segundo_proyecto_principal");
   }
 
   ngOnInit() {

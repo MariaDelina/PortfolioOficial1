@@ -1,13 +1,4 @@
-.progress{
-  background-color: transparent;
-  width: 60%;
-  height: 20px;
-  float: inherit;
-  border-radius: 20px;
-  margin-bottom: 10px;
-
-}
-.seccion .habilidades{
+.seccion .habilidades {
   display: flex;
   align-items: center;
   margin-bottom: 50px;
@@ -17,4 +8,12 @@
   line-height: 1em;
   color: rgb(230, 220, 209);
   mix-blend-mode: exclusion;
+}
+.bar {
+  width: 60%;
+  height: 30px;
+  margin-top: 5px;
+}
+.div-editar{
+  margin-left: 70%;
 }

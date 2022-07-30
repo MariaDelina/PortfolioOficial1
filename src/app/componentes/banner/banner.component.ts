@@ -3,18 +3,15 @@ import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute } from '@angular/router';
 import { Banner } from 'src/app/modelos/banner';
 import { BannerService } from 'src/app/servicios/banner.service';
-import { FormBuilder, FormGroup } from '@angular/forms';
-import { TokenService } from 'src/app/servicios/token.service';
 
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
   styleUrls: ['./banner.component.css'],
 })
-export class BannerComponent {
+export class BannerComponent implements OnInit{
   // @ts-ignore
   banner: Banner[] = [];
-  roles: string[] = [];
 
   constructor(
     private bannerService: BannerService,

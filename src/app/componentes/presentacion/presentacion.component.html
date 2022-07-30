@@ -9,32 +9,33 @@
       {{ presentacion[presentacion.length - 1].nombre_y_apellido }}
     </h2>
     <h3 class="h3">{{ presentacion[presentacion.length - 1].puesto }}</h3>
+
     <img
-    height="200px"
-    width="150px"
-    src="assets/Linke.jpg"
-    alt="imagen"
-    class="imgperfil"
-    loading="lazy"
-  />
+      [src]="photoSelected || 'assets/Linke.jpg'"
+      height="200px"
+      width="150px"
+      (click)="photoInput.click()"
+      class="imgperfil"
+    />
+    <label class="nuestroinput"
+      >Subir foto
+      <input
+        (change)="mostrarImg($event)"
+        #photoInput
+        type="file"
+        class="form-control"
+        placeholder="escribe la Url del logo de su empresa"
+        id="nuestroinput"
+    /></label>
+
     <ul class="ul">
       <li class="li">
-        <a
-          class="a"
-          title="LinkedIn"
-          (click)="goToLinkedin()"
-          routerLink="/{{ presentacion[presentacion.length - 1].linkedin }}"
+        <a class="a" title="LinkedIn" (click)="goToLinkedin()"
           >Visitar mi LinkedIn</a
         >
       </li>
       <li class="li">
-        <a
-          class="a"
-          title="GitHub"
-          (click)="goToGithub()"
-          routerLink="{{ presentacion[presentacion.length - 1].github }}"
-          >Visitar mi GitHub</a
-        >
+        <a class="a" title="GitHub" (click)="goToGithub()">Visitar mi GitHub</a>
       </li>
     </ul>
     <div class="div-editar">

@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Presentacion } from 'src/app/modelos/presentacion';
 import { PresentacionService } from 'src/app/servicios/presentacion.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -17,10 +15,17 @@ export class EditarPresentacionComponent {
   constructor(
     private presentacionService: PresentacionService,
     private activatedRoute: ActivatedRoute,
-    private toastr: ToastrService,
     private router: Router,
     private formulario: FormBuilder
   ) {
+    // @ts-ignore
+    this.presentacion = new Array<Presetacion>(
+      0,
+      'nombre_y_apellido',
+      'puesto',
+      'github',
+      'linkedin'
+    );
     this.formId = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(this.formId);
     this.presentacionService.detail(this.formId).subscribe((respuesta) => {
@@ -28,15 +33,11 @@ export class EditarPresentacionComponent {
       this.formularioPresentacion.setValue({
         nombre_y_apellido: respuesta['nombre_y_apellido'],
         puesto: respuesta['puesto'],
-        github: ['github'],
-        linkedin: ['linkedin'],
       });
     });
     this.formularioPresentacion = this.formulario.group({
-      nombre_y_apellido: ['', [Validators.required]],
-      puesto: ['', [Validators.required]],
-      github: [''],
-      linkedin: [''],
+      nombre_y_apellido: [''],
+      puesto: [''],
     });
   }
   get NombreYApellido() {
@@ -45,17 +46,11 @@ export class EditarPresentacionComponent {
   get Puesto() {
     return this.formularioPresentacion.get('puesto');
   }
-  get Github() {
-    return this.formularioPresentacion.get('github');
-  }
-  get Linkedin() {
-    return this.formularioPresentacion.get('linkedin');
-  }
-  enviarPresentacion(): any {
+  enviarPresentacion(): void {
     this.presentacionService
       .update(this.formId, this.formularioPresentacion.value)
       .subscribe(() => {
-        this.router.navigateByUrl('lista');
+        this.router.navigateByUrl('/lista');
       });
   }
 }

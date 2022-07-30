@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { PrincipalesProyectos } from 'src/app/modelos/principales-proyectos';
 import { PrincipalesproyectosService } from '../../servicios/principalesproyectos.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
@@ -17,10 +16,11 @@ export class EditarPrincipalesProyectosComponent {
   constructor(
     private principalesProyectosService: PrincipalesproyectosService,
     private activatedRoute: ActivatedRoute,
-    private toastr: ToastrService,
     private router: Router,
     private formulario: FormBuilder
   ) {
+    // @ts-ignore
+    this.prinProyectos = new Array<PrincipalesProyectos>(0, "url_primer_proyecto_principal", "url_segundo_proyecto_principal");
     this.formId = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(this.formId);
     this.principalesProyectosService

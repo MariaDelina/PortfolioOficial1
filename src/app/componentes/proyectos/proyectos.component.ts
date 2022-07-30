@@ -12,7 +12,6 @@ import { TokenService } from 'src/app/servicios/token.service';
 })
 export class ProyectosComponent implements OnInit {
   proyectos: Proyectos[] = [];
-  roles: string[] = [];
 
 
   constructor(

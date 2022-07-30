@@ -1,0 +1,74 @@
+<div class="container">
+  <div class="row mt-5">
+    <div class="col-md-4 mx-auto">
+      <form
+        #myForm="ngForm"
+        class="form-input"
+        [formGroup]="formularioHabilidad"
+        (ngSubmit)="editarHabilidad()"
+        class="form-input"
+        novalidate
+      >
+        <div class="mb-3">
+          <h6>Habilidades en JavaScript</h6>
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="porcentaje_js"
+            aria.describedby="helpId"
+            placeholder="Habilidades en JavaScript"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <h6>Habilidades en Java</h6>
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="porcentaje_java"
+            aria.describedby="helpId"
+            placeholder="Habilidades en Java"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <h6>Habilidades en Angular</h6>
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="porcentaje_angular"
+            aria.describedby="helpId"
+            placeholder="Habilidades en Angular"
+            required
+          />
+        </div>
+        <div class="mb-3">
+          <h6>Habilidades en MySQL</h6>
+          <label for="" class="form-label"></label>
+          <input
+            type="text"
+            class="form-control"
+            formControlName="porcentaje_mysql"
+            aria.describedby="helpId"
+            placeholder="Habilidades en MySQL"
+            required
+          />
+        </div>
+
+        <div class="btn-group" role="group" aria-label="">
+          <button
+            type="submit"
+            class="btn btn-succes"
+            [disabled]="!myForm.valid"
+          >
+            Editar
+          </button>
+          <button class="btnn">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

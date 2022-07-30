@@ -84,14 +84,3 @@ export class EditarEducacionComponent {
   }
 }
 
-// addorEdit(){
-// this.selectCampo = this.formularioEducacion.length + 1;
-//this.formularioEducacion.value.push(this.selectCampo);
-// @ts-ignore
-//this.selectCampo = new Educacion();
-// }
-
-//(this.InfoDeInstituto, this.Certificaciones,this.InfoDeInstituto, this.UrlLogoInstituto, this.NombreCarrera ,this.DesdePeriodoAno, this.HastaPeriodoAno
-
-//[(ngModel)]="selectCampo.certificaciones"
-//
